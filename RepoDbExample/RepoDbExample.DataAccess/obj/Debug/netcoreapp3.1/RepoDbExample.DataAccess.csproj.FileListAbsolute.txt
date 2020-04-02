@@ -1,0 +1,14 @@
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\bin\Debug\netcoreapp3.1\RepoDbExample.DataAccess.deps.json
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\bin\Debug\netcoreapp3.1\RepoDbExample.DataAccess.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\bin\Debug\netcoreapp3.1\RepoDbExample.DataAccess.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\obj\Debug\netcoreapp3.1\RepoDbExample.DataAccess.csprojAssemblyReference.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\obj\Debug\netcoreapp3.1\RepoDbExample.DataAccess.csproj.CoreCompileInputs.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\obj\Debug\netcoreapp3.1\RepoDbExample.DataAccess.AssemblyInfoInputs.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\obj\Debug\netcoreapp3.1\RepoDbExample.DataAccess.AssemblyInfo.cs
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\obj\Debug\netcoreapp3.1\RepoDbExample.DataAccess.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\obj\Debug\netcoreapp3.1\RepoDbExample.DataAccess.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\bin\Debug\netcoreapp3.1\RepoDbExample.Core.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\bin\Debug\netcoreapp3.1\RepoDbExample.Entites.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\bin\Debug\netcoreapp3.1\RepoDbExample.Entites.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\bin\Debug\netcoreapp3.1\RepoDbExample.Core.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.DataAccess\obj\Debug\netcoreapp3.1\RepoDbExample.DataAccess.csproj.CopyComplete

@@ -1,0 +1,62 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "RepoDbExample.Business/1.0.0": {
+        "dependencies": {
+          "RepoDbExample.DataAccess": "1.0.0"
+        },
+        "runtime": {
+          "RepoDbExample.Business.dll": {}
+        }
+      },
+      "RepoDbExample.Core/1.0.0": {
+        "runtime": {
+          "RepoDbExample.Core.dll": {}
+        }
+      },
+      "RepoDbExample.DataAccess/1.0.0": {
+        "dependencies": {
+          "RepoDbExample.Entites": "1.0.0"
+        },
+        "runtime": {
+          "RepoDbExample.DataAccess.dll": {}
+        }
+      },
+      "RepoDbExample.Entites/1.0.0": {
+        "dependencies": {
+          "RepoDbExample.Core": "1.0.0"
+        },
+        "runtime": {
+          "RepoDbExample.Entites.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RepoDbExample.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RepoDbExample.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RepoDbExample.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RepoDbExample.Entites/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
