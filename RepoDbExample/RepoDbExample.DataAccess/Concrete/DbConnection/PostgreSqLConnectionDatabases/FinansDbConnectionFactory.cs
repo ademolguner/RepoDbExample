@@ -1,25 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using System.Text;
 
-namespace RepoDbExample.DataAccess.Concrete.DbConnection
+namespace RepoDbExample.DataAccess.Concrete.DbConnection.PostgreSqLConnectionDatabases
 {
-    public class AoDbConnectionFactory : IDbConnection
+    // 
+    public class FinansDbConnectionFactory : IDbConnection
     {
-
         private string _connectionStringValue;
 
-        public AoDbConnectionFactory()
+        public FinansDbConnectionFactory()
         {
-            _connectionStringValue = "Server=.;Database=AdemOlgunerBlogDB;Integrated Security=SSPI;";
+           // _connectionStringValue = @"User Id=postgres; Server=localhost; Port=5432; Database=finansdb; Unicode=True; Connection Timeout=15; Default Command Timeout=30; Integrated Security=False";
+            //_connectionStringValue =   @"User ID=postgres;Password=1903;Server=localhost;Database=finansdb;Integrated Security=true;Pooling=true;";
+            _connectionStringValue = @"Server=localhost;Port=5432;Database=finansdb;User Id=postgres;Password=1903;";
         }
+        //"User ID=postgres;Password=1903;Server=localhost;Port=5432;Database=finansdb;Integrated Security=true;Pooling=true;"
+        //"Server=.;Database=Northwind;Integrated Security=SSPI;";
 
         public string ConnectionString
         {
             get { return _connectionStringValue; }
             set { ConnectionString = _connectionStringValue; }
         }
-
+         
         public int ConnectionTimeout => 10000;
 
         public string Database => Database;

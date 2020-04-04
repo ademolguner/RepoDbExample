@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text; 
+using System.Text;
 using RepoDbExample.Core.Entities;
 
-namespace RepoDbExample.Entites.Models
+namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
     public class Category : IEntity
     {
         public Category()
         {
-            this.Products = new HashSet<Product>();
+            Products = new HashSet<Product>();
         }
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }

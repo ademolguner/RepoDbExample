@@ -168,6 +168,17 @@
           }
         }
       },
+      "Npgsql/4.1.3.1": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Npgsql.dll": {
+            "assemblyVersion": "4.1.3.1",
+            "fileVersion": "4.1.3.1"
+          }
+        }
+      },
       "RepoDb/1.10.10": {
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
@@ -181,6 +192,18 @@
           "lib/netstandard2.0/RepoDb.dll": {
             "assemblyVersion": "1.10.10.1",
             "fileVersion": "1.10.10.1"
+          }
+        }
+      },
+      "RepoDb.PostgreSql/1.0.4": {
+        "dependencies": {
+          "Npgsql": "4.1.3.1",
+          "RepoDb": "1.10.10"
+        },
+        "runtime": {
+          "lib/netstandard2.0/RepoDb.PostgreSql.dll": {
+            "assemblyVersion": "1.0.4.0",
+            "fileVersion": "1.0.4.0"
           }
         }
       },
@@ -640,7 +663,7 @@
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.0": {},
+      "System.Runtime.CompilerServices.Unsafe/4.6.0": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -763,7 +786,7 @@
       "System.Text.Encoding.CodePages/4.5.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.0"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         }
       },
       "System.Text.Encoding.Extensions/4.3.0": {
@@ -871,6 +894,7 @@
       },
       "RepoDbExample.Core/1.0.0": {
         "dependencies": {
+          "Npgsql": "4.1.3.1",
           "RepoDb": "1.10.10",
           "System.Data.SqlClient": "4.8.1"
         },
@@ -880,6 +904,7 @@
       },
       "RepoDbExample.DataAccess/1.0.0": {
         "dependencies": {
+          "RepoDb.PostgreSql": "1.0.4",
           "RepoDb.SqlServer": "1.0.4",
           "RepoDbExample.Entites": "1.0.0"
         },
@@ -987,12 +1012,26 @@
       "path": "newtonsoft.json/10.0.1",
       "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
     },
+    "Npgsql/4.1.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-354pl/Picmt5/AIrm8urFwtxfK4n4NbmfBnLA9yvP8VtILSQF3/sFo3+lGuz+q4iyD18QeNFy0NMNBzsocFVlw==",
+      "path": "npgsql/4.1.3.1",
+      "hashPath": "npgsql.4.1.3.1.nupkg.sha512"
+    },
     "RepoDb/1.10.10": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Xx6WeEVPFqwJX572JtZzeEcVVDWdFyPCkvSZyh5xyr+gLU1qoIAotrmsBViDSfcO01jQYUq71KDeqo28SA0VOA==",
       "path": "repodb/1.10.10",
       "hashPath": "repodb.1.10.10.nupkg.sha512"
+    },
+    "RepoDb.PostgreSql/1.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LqH7148MCMcEWflUjxR7rWPOrAmRnDLHcFkV34MohAR9yNK2sSvKroCwe9gGDZRu56Kv2zjn0yqehr1DtBlxyA==",
+      "path": "repodb.postgresql/1.0.4",
+      "hashPath": "repodb.postgresql.1.0.4.nupkg.sha512"
     },
     "RepoDb.SqlServer/1.0.4": {
       "type": "package",
@@ -1288,12 +1327,12 @@
       "path": "system.runtime.caching/4.5.0",
       "hashPath": "system.runtime.caching.4.5.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.0": {
+    "System.Runtime.CompilerServices.Unsafe/4.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YrzNWduCDHhUaSRBxHxL11UkM2fD6y8hITHis4/LbQZ6vj3vdRjoH3IoPWWC9uDXK2wHIqn+b5gv1Np/VKyM1g==",
-      "path": "system.runtime.compilerservices.unsafe/4.5.0",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512"
+      "sha512": "sha512-HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
+      "path": "system.runtime.compilerservices.unsafe/4.6.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",

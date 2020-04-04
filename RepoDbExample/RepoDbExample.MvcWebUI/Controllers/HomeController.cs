@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RepoDbExample.Business.Abstract;
-using RepoDbExample.Entites.Models;
+using RepoDbExample.Entites.Models.PostgreSql.Finans;
+using RepoDbExample.Entites.Models.Sql.Northwind;
 using RepoDbExample.MvcWebUI.Models;
 
 namespace RepoDbExample.MvcWebUI.Controllers
@@ -15,19 +16,24 @@ namespace RepoDbExample.MvcWebUI.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly ICategoryService _categoryService;
+        private readonly ICashboxService _cashboxService;
 
 
 
-        public HomeController(ILogger<HomeController> logger, ICategoryService categoryService)
+        public HomeController(ILogger<HomeController> logger, ICategoryService categoryService, ICashboxService cashboxService)
         {
             _logger = logger;
             _categoryService = categoryService;
+            _cashboxService = cashboxService;
         }
 
         public IActionResult Index()
         {
-            _categoryService.NewItem(new Category { CategoryName = "Testere", Description = "denem" });
-            _categoryService.QueryAll(new Category { CategoryName = "Testere", Description = "denem", CategoryID = 9 });
+            //     _categoryService.NewItem(new Category { CategoryName = "Testere", Description = "denem" });
+            //   _categoryService.QueryAll(new Category { CategoryName = "Testere", Description = "denem", CategoryID = 9 });
+
+            _cashboxService.NewItem(new Cashbox { CashTypeId = 1, TotalQuantity = 45 });
+
             return View();
         }
 

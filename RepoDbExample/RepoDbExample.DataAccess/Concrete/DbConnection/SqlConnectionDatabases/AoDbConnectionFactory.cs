@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace RepoDbExample.DataAccess.Concrete.DbConnection
+namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
 {
     public class NwDbConnectionFactory : IDbConnection
     {

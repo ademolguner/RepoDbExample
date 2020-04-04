@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RepoDb.SqlServer" Version="1.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RepoDbExample.Business\RepoDbExample.Business.csproj" />
   </ItemGroup>
 

@@ -14,7 +14,8 @@ using RepoDbExample.Business.Abstract;
 using RepoDbExample.Business.Concrete.Managers;
 using RepoDbExample.DataAccess.Abstract;
 using RepoDbExample.DataAccess.Concrete;
-using RepoDbExample.DataAccess.Concrete.DbConnection;
+using RepoDbExample.DataAccess.Concrete.DbConnection.PostgreSqLConnectionDatabases;
+using RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases;
 
 namespace RepoDbExample.MvcWebUI
 {
@@ -34,11 +35,17 @@ namespace RepoDbExample.MvcWebUI
            
             services.AddTransient<System.Data.IDbConnection, NwDbConnectionFactory>();
             services.AddTransient<System.Data.IDbConnection, AoDbConnectionFactory>();
+            services.AddTransient<System.Data.IDbConnection, FinansDbConnectionFactory>();
 
             services.AddTransient<ICategoryService, CategoryManager>();
             services.AddTransient<ICategoryDal, CategoryDal>();
 
+
+            services.AddTransient<ICashboxService, CashboxManager>();
+            services.AddTransient<ICashboxDal, CashboxDal>();
+
             SqlServerBootstrap.Initialize();
+            PostgreSqlBootstrap.Initialize();
 
             services.AddControllersWithViews();
         }

@@ -201,6 +201,18 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
+      "Npgsql/4.1.3.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Npgsql.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Npgsql.dll": {}
+        }
+      },
       "RepoDb/1.10.10": {
         "type": "package",
         "dependencies": {
@@ -216,6 +228,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/RepoDb.dll": {}
+        }
+      },
+      "RepoDb.PostgreSql/1.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Npgsql": "4.1.2",
+          "RepoDb": "1.10.10"
+        },
+        "compile": {
+          "lib/netstandard2.0/RepoDb.PostgreSql.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RepoDb.PostgreSql.dll": {}
         }
       },
       "RepoDb.SqlServer/1.0.4": {
@@ -879,10 +904,10 @@
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.0": {
+      "System.Runtime.CompilerServices.Unsafe/4.6.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
@@ -1300,6 +1325,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Npgsql": "4.1.3.1",
           "RepoDb": "1.10.10",
           "System.Data.SqlClient": "4.8.1"
         },
@@ -1314,6 +1340,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "RepoDb.PostgreSql": "1.0.4",
           "RepoDb.SqlServer": "1.0.4",
           "RepoDbExample.Entites": "1.0.0"
         },
@@ -1709,6 +1736,30 @@
         "tools/install.ps1"
       ]
     },
+    "Npgsql/4.1.3.1": {
+      "sha512": "354pl/Picmt5/AIrm8urFwtxfK4n4NbmfBnLA9yvP8VtILSQF3/sFo3+lGuz+q4iyD18QeNFy0NMNBzsocFVlw==",
+      "type": "package",
+      "path": "npgsql/4.1.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Npgsql.dll",
+        "lib/net461/Npgsql.pdb",
+        "lib/net461/Npgsql.xml",
+        "lib/netcoreapp3.0/Npgsql.dll",
+        "lib/netcoreapp3.0/Npgsql.pdb",
+        "lib/netcoreapp3.0/Npgsql.xml",
+        "lib/netstandard2.0/Npgsql.dll",
+        "lib/netstandard2.0/Npgsql.pdb",
+        "lib/netstandard2.0/Npgsql.xml",
+        "lib/netstandard2.1/Npgsql.dll",
+        "lib/netstandard2.1/Npgsql.pdb",
+        "lib/netstandard2.1/Npgsql.xml",
+        "npgsql.4.1.3.1.nupkg.sha512",
+        "npgsql.nuspec",
+        "postgresql.png"
+      ]
+    },
     "RepoDb/1.10.10": {
       "sha512": "Xx6WeEVPFqwJX572JtZzeEcVVDWdFyPCkvSZyh5xyr+gLU1qoIAotrmsBViDSfcO01jQYUq71KDeqo28SA0VOA==",
       "type": "package",
@@ -1722,6 +1773,21 @@
         "lib/netstandard2.0/RepoDb.xml",
         "repodb.1.10.10.nupkg.sha512",
         "repodb.nuspec"
+      ]
+    },
+    "RepoDb.PostgreSql/1.0.4": {
+      "sha512": "LqH7148MCMcEWflUjxR7rWPOrAmRnDLHcFkV34MohAR9yNK2sSvKroCwe9gGDZRu56Kv2zjn0yqehr1DtBlxyA==",
+      "type": "package",
+      "path": "repodb.postgresql/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "RepoDb-64x64.png",
+        "lib/netstandard2.0/RepoDb.PostgreSql.dll",
+        "lib/netstandard2.0/RepoDb.PostgreSql.xml",
+        "repodb.postgresql.1.0.4.nupkg.sha512",
+        "repodb.postgresql.nuspec"
       ]
     },
     "RepoDb.SqlServer/1.0.4": {
@@ -3818,10 +3884,10 @@
         "version.txt"
       ]
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.0": {
-      "sha512": "YrzNWduCDHhUaSRBxHxL11UkM2fD6y8hITHis4/LbQZ6vj3vdRjoH3IoPWWC9uDXK2wHIqn+b5gv1Np/VKyM1g==",
+    "System.Runtime.CompilerServices.Unsafe/4.6.0": {
+      "sha512": "HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
       "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.5.0",
+      "path": "system.runtime.compilerservices.unsafe/4.6.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3833,13 +3899,11 @@
         "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/uap10.0.16300/_._",
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
         "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/uap10.0.16300/_._",
-        "system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"

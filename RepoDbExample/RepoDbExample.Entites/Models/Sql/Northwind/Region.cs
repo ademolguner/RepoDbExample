@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RepoDbExample.Entites.Models
+namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
-    public   class Region : IEntity
+    public class Region : IEntity
     {
-          public Region()
+        public Region()
         {
-            this.Territories = new HashSet<Territory>();
+            Territories = new HashSet<Territory>();
         }
 
         public int RegionID { get; set; }

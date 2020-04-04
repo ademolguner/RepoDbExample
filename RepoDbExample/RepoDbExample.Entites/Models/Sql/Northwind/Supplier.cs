@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace RepoDbExample.Entites.Models
+namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
     public class Supplier : IEntity
     {
         public Supplier()
         {
-            this.Products = new HashSet<Product>();
+            Products = new HashSet<Product>();
         }
 
         public int SupplierID { get; set; }

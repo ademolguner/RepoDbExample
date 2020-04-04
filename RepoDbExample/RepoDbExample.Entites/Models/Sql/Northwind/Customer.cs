@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 
-namespace RepoDbExample.Entites.Models
+namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
     public class Customer : IEntity
     {
         public Customer()
         {
-            this.Orders = new HashSet<Order>();
+            Orders = new HashSet<Order>();
         }
 
 
@@ -25,7 +25,7 @@ namespace RepoDbExample.Entites.Models
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
-         
+
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

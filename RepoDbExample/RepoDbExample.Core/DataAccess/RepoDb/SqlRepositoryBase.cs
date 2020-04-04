@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace RepoDbExample.Core.DataAccess.RepoDb
 {
-    public class RepoDbRepositoryBase<TEntity, DbConnection> : IRepoDbRepository<TEntity>
+    public class SqlRepositoryBase<TEntity, DbConnection> : IRepository<TEntity>
          where TEntity : class, IEntity, new()
          where DbConnection : System.Data.IDbConnection, new()
     {
@@ -21,7 +21,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
 
         public IEnumerable<TEntity> QueryAll(TEntity entity)
         {
-            using var conn = new SqlConnection(new DbConnection().ConnectionString);
+            using var conn = new SqlConnection(new DbConnection().ConnectionString).EnsureOpen();
             var data = conn.QueryAll<TEntity>();
             return data;
         }

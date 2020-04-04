@@ -6,7 +6,7 @@ using System.Text;
 
 namespace RepoDbExample.Core.DataAccess
 {
-    public interface IRepoDbRepository<T>  where T : class, IEntity, new()
+    public interface IRepository<T>  where T : class, IEntity, new()
         
     {
         //List<T> GetList(Expression<Func<T, bool>> filter = null);

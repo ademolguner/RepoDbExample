@@ -68,3 +68,5 @@ D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWeb
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\obj\Debug\netcoreapp3.1\RepoDbExample.MvcWebUI.dll
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\obj\Debug\netcoreapp3.1\RepoDbExample.MvcWebUI.pdb
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\obj\Debug\netcoreapp3.1\RepoDbExample.MvcWebUI.genruntimeconfig.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\bin\Debug\netcoreapp3.1\Npgsql.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\bin\Debug\netcoreapp3.1\RepoDb.PostgreSql.dll
