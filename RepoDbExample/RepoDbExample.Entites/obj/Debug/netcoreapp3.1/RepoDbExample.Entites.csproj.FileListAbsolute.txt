@@ -1,12 +1,12 @@
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\bin\Debug\netcoreapp3.1\RepoDbExample.Entites.deps.json
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\bin\Debug\netcoreapp3.1\RepoDbExample.Entites.dll
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\bin\Debug\netcoreapp3.1\RepoDbExample.Entites.pdb
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\bin\Debug\netcoreapp3.1\RepoDbExample.Core.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\bin\Debug\netcoreapp3.1\RepoDbExample.Core.pdb
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\obj\Debug\netcoreapp3.1\RepoDbExample.Entites.csprojAssemblyReference.cache
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\obj\Debug\netcoreapp3.1\RepoDbExample.Entites.csproj.CoreCompileInputs.cache
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\obj\Debug\netcoreapp3.1\RepoDbExample.Entites.AssemblyInfoInputs.cache
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\obj\Debug\netcoreapp3.1\RepoDbExample.Entites.AssemblyInfo.cs
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\obj\Debug\netcoreapp3.1\RepoDbExample.Entites.csproj.CopyComplete
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\obj\Debug\netcoreapp3.1\RepoDbExample.Entites.dll
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\obj\Debug\netcoreapp3.1\RepoDbExample.Entites.pdb
-D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\bin\Debug\netcoreapp3.1\RepoDbExample.Core.dll
-D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\bin\Debug\netcoreapp3.1\RepoDbExample.Core.pdb
-D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Entites\obj\Debug\netcoreapp3.1\RepoDbExample.Entites.csproj.CopyComplete

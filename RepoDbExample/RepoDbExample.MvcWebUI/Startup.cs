@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -8,6 +9,12 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RepoDb;
+using RepoDbExample.Business.Abstract;
+using RepoDbExample.Business.Concrete.Managers;
+using RepoDbExample.Core.DataAccess.RepoDb;
+using RepoDbExample.DataAccess.Abstract;
+using RepoDbExample.DataAccess.Concrete;
 
 namespace RepoDbExample.MvcWebUI
 {
@@ -23,6 +30,16 @@ namespace RepoDbExample.MvcWebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+           
+            services.AddTransient<System.Data.IDbConnection, NwDbConnectionFactory>();
+            services.AddTransient<System.Data.IDbConnection, AoDbConnectionFactory>();
+
+            services.AddTransient<ICategoryService, CategoryManager>();
+            services.AddTransient<ICategoryDal, CategoryDal>();
+
+            SqlServerBootstrap.Initialize();
+
             services.AddControllersWithViews();
         }
 
@@ -45,6 +62,7 @@ namespace RepoDbExample.MvcWebUI
             app.UseRouting();
 
             app.UseAuthorization();
+             
 
             app.UseEndpoints(endpoints =>
             {
@@ -53,5 +71,6 @@ namespace RepoDbExample.MvcWebUI
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+       
     }
 }
