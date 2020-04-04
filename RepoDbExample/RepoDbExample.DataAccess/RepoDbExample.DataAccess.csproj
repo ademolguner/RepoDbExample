@@ -12,8 +12,4 @@
     <ProjectReference Include="..\RepoDbExample.Entites\RepoDbExample.Entites.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Concrete\DbConnection\" />
-  </ItemGroup>
-
 </Project>

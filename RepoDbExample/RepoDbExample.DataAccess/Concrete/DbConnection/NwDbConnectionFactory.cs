@@ -2,9 +2,9 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace RepoDbExample.Core.DataAccess.RepoDb
+namespace RepoDbExample.DataAccess.Concrete.DbConnection
 {
-    public   class AoDbConnectionFactory : IDbConnection
+    public class AoDbConnectionFactory : IDbConnection
     {
 
         private string _connectionStringValue;
@@ -14,53 +14,53 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             _connectionStringValue = "Server=.;Database=AdemOlgunerBlogDB;Integrated Security=SSPI;";
         }
 
-        public   string ConnectionString
+        public string ConnectionString
         {
             get { return _connectionStringValue; }
             set { ConnectionString = _connectionStringValue; }
         }
-        
+
         public int ConnectionTimeout => 10000;
 
-        public string Database => this.Database;
+        public string Database => Database;
 
-        public ConnectionState State => this.State;
+        public ConnectionState State => State;
 
-        
+
 
         public IDbTransaction BeginTransaction()
         {
-            return this.BeginTransaction();
+            return BeginTransaction();
         }
 
         public IDbTransaction BeginTransaction(IsolationLevel il)
         {
-            return this.BeginTransaction(il);
+            return BeginTransaction(il);
         }
 
         public void ChangeDatabase(string databaseName)
         {
-            this.ChangeDatabase(databaseName);
+            ChangeDatabase(databaseName);
         }
 
         public void Close()
         {
-            this.Close();
+            Close();
         }
 
         public IDbCommand CreateCommand()
         {
-            return this.CreateCommand();
+            return CreateCommand();
         }
 
         public void Dispose()
         {
-            this.Dispose();
+            Dispose();
         }
 
         public void Open()
         {
-            this.Open();
+            Open();
         }
     }
 }

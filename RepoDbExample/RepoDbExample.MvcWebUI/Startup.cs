@@ -12,9 +12,9 @@ using Microsoft.Extensions.Hosting;
 using RepoDb;
 using RepoDbExample.Business.Abstract;
 using RepoDbExample.Business.Concrete.Managers;
-using RepoDbExample.Core.DataAccess.RepoDb;
 using RepoDbExample.DataAccess.Abstract;
 using RepoDbExample.DataAccess.Concrete;
+using RepoDbExample.DataAccess.Concrete.DbConnection;
 
 namespace RepoDbExample.MvcWebUI
 {

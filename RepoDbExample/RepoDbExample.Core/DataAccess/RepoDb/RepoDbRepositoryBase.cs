@@ -14,20 +14,16 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
 
         public void Insert(TEntity entity)
         {
-            
-            using (var conn = new SqlConnection(new DbConnection().ConnectionString))
-            {
-                var data = conn.Insert(entity);
-            } 
+
+            using var conn = new SqlConnection(new DbConnection().ConnectionString);
+            var data = conn.Insert(entity);
         }
 
         public IEnumerable<TEntity> QueryAll(TEntity entity)
         {
-            using (var conn = new SqlConnection(new DbConnection().ConnectionString))
-            {
-                var data = conn.QueryAll<TEntity>();
-                return data;
-            }
+            using var conn = new SqlConnection(new DbConnection().ConnectionString);
+            var data = conn.QueryAll<TEntity>();
+            return data;
         }
     }
 }
