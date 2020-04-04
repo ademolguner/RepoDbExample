@@ -12,24 +12,6 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
     {
 
 
-
-
-        //public void Add(TEntity entity)
-        //{
-        //    using (var connection = new DbConnection().CreateDbConnection())  //SqlConnection(@"Server=.;Database=Northwind;Integrated Security=SSPI;").EnsureOpen()) //
-        //    {
-        //        var result = connection.Insert<IEntity>(entity);
-        //    }
-        //}
-
-        //public void Insert(TEntity entity)
-        //{
-        //    var conn = new DbConnection().GetConnection();
-        //    using (var connection = new DbConnection().CreateDbConnection(conn))  //SqlConnection(@"Server=.;Database=Northwind;Integrated Security=SSPI;").EnsureOpen()) //
-        //    {
-        //        var result = connection.Insert(entity);
-        //    }
-        //} 
         public void Insert(TEntity entity)
         {
             
@@ -41,7 +23,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
 
         public IEnumerable<TEntity> QueryAll(TEntity entity)
         {
-            using (var conn = new DbConnection())
+            using (var conn = new SqlConnection(new DbConnection().ConnectionString))
             {
                 var data = conn.QueryAll<TEntity>();
                 return data;
