@@ -21,9 +21,9 @@ namespace RepoDbExample.Business.Concrete.Managers
             _cashboxDal.Insert(cashbox);
         }
 
-        public IEnumerable<Cashbox> QueryAll(Cashbox cashbox)
+        public IEnumerable<Cashbox> QueryAll()
         {
-           return _cashboxDal.QueryAll(cashbox);
+           return _cashboxDal.QueryAll();
         }
     }
 }

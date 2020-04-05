@@ -8,17 +8,13 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.PostgreSqLConnectionDat
     // 
     public class FinansDbConnectionFactory : IDbConnection
     {
-        private string _connectionStringValue;
+         
 
+        private string _connectionStringValue;
         public FinansDbConnectionFactory()
         {
-           // _connectionStringValue = @"User Id=postgres; Server=localhost; Port=5432; Database=finansdb; Unicode=True; Connection Timeout=15; Default Command Timeout=30; Integrated Security=False";
-            //_connectionStringValue =   @"User ID=postgres;Password=1903;Server=localhost;Database=finansdb;Integrated Security=true;Pooling=true;";
-            _connectionStringValue = @"Server=localhost;Port=5432;Database=finansdb;User Id=postgres;Password=1903;";
+            _connectionStringValue = new AppConfiguration(DatabaseConnectionName.FinansDb)._connectionString;
         }
-        //"User ID=postgres;Password=1903;Server=localhost;Port=5432;Database=finansdb;Integrated Security=true;Pooling=true;"
-        //"Server=.;Database=Northwind;Integrated Security=SSPI;";
-
         public string ConnectionString
         {
             get { return _connectionStringValue; }

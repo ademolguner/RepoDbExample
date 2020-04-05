@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
@@ -14,6 +14,7 @@ using RepoDbExample.Business.Abstract;
 using RepoDbExample.Business.Concrete.Managers;
 using RepoDbExample.DataAccess.Abstract;
 using RepoDbExample.DataAccess.Concrete;
+using RepoDbExample.DataAccess.Concrete.DbConnection;
 using RepoDbExample.DataAccess.Concrete.DbConnection.PostgreSqLConnectionDatabases;
 using RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases;
 
@@ -31,10 +32,10 @@ namespace RepoDbExample.MvcWebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
 
-           
             services.AddTransient<System.Data.IDbConnection, NwDbConnectionFactory>();
-            services.AddTransient<System.Data.IDbConnection, AoDbConnectionFactory>();
+            services.AddTransient<System.Data.IDbConnection, AoBlogDbConnectionFactory>();
             services.AddTransient<System.Data.IDbConnection, FinansDbConnectionFactory>();
 
             services.AddTransient<ICategoryService, CategoryManager>();
@@ -44,8 +45,12 @@ namespace RepoDbExample.MvcWebUI
             services.AddTransient<ICashboxService, CashboxManager>();
             services.AddTransient<ICashboxDal, CashboxDal>();
 
+            services.AddTransient<ITagService, TagManager>();
+            services.AddTransient<ITagDal, TagDal>();
+
             SqlServerBootstrap.Initialize();
             PostgreSqlBootstrap.Initialize();
+            // nosql ekle baska bişi ekle
 
             services.AddControllersWithViews();
         }

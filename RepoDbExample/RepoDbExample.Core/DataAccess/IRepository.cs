@@ -20,7 +20,7 @@ namespace RepoDbExample.Core.DataAccess
 
 
         //RepoDB query tipleri
-        IEnumerable<T> QueryAll(T entity);
+        IEnumerable<T> QueryAll();
 
         //List<T> BulkDelete<T>(List<T> bulkInsetData);
         //List<T> BulkInsert<T>(List<T> bulkInsetData);

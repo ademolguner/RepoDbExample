@@ -8,13 +8,11 @@ using System.Text;
 
 namespace RepoDbExample.Core.DataAccess.RepoDb
 {
-     
 
     public class PostgreSqlRepositoryBase<TEntity, DbConnection> : IRepository<TEntity>
          where TEntity : class, IEntity, new()
          where DbConnection : System.Data.IDbConnection, new()
     {
-
 
         public void Insert(TEntity entity)
         {
@@ -23,11 +21,13 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             var data = conn.Insert(entity);
         }
 
-        public IEnumerable<TEntity> QueryAll(TEntity entity)
+        public IEnumerable<TEntity> QueryAll()
         {
             using var conn = new NpgsqlConnection(new DbConnection().ConnectionString);
             var data = conn.QueryAll<TEntity>();
             return data;
         }
+
+        
     }
 }

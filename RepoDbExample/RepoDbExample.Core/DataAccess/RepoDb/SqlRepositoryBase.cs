@@ -15,11 +15,12 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
         public void Insert(TEntity entity)
         {
 
-            using var conn = new SqlConnection(new DbConnection().ConnectionString);
+            using var conn = new SqlConnection(new DbConnection().ConnectionString).EnsureOpen();
             var data = conn.Insert(entity);
         }
 
-        public IEnumerable<TEntity> QueryAll(TEntity entity)
+        
+        public IEnumerable<TEntity> QueryAll()
         {
             using var conn = new SqlConnection(new DbConnection().ConnectionString).EnsureOpen();
             var data = conn.QueryAll<TEntity>();

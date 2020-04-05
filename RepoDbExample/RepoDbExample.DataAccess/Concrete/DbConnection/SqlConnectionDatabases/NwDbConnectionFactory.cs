@@ -1,17 +1,20 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
 {
-    public class AoDbConnectionFactory : IDbConnection
+    public class NwDbConnectionFactory : IDbConnection
     {
 
+
+        
         private string _connectionStringValue;
 
-        public AoDbConnectionFactory()
-        {
-            _connectionStringValue = "Server=.;Database=AdemOlgunerBlogDB;Integrated Security=SSPI;";
+        public NwDbConnectionFactory()
+        { 
+            _connectionStringValue = new AppConfiguration(DatabaseConnectionName.NorthWind)._connectionString; // "Server=.;Database=Northwind;Integrated Security=SSPI;";
         }
 
         public string ConnectionString

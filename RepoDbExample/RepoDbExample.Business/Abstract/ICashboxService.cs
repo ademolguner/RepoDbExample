@@ -7,7 +7,7 @@ namespace RepoDbExample.Business.Abstract
 {
     public interface ICashboxService
     {
-        IEnumerable<Cashbox> QueryAll(Cashbox cashbox);
+        IEnumerable<Cashbox> QueryAll();
         void NewItem(Cashbox cashbox);
     }
 }
