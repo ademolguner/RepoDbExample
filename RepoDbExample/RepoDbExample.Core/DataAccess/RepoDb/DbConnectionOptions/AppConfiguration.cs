@@ -1,19 +1,20 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace RepoDbExample.DataAccess.Concrete.DbConnection
+namespace RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions
 {
     public class AppConfiguration
-    { 
-         
+    {
+
         public readonly string _connectionString = string.Empty;
 
 
         public AppConfiguration(DatabaseConnectionName databaseConnectionName)
-        { 
+        {
 
             var configurationBuilder = new ConfigurationBuilder();
             var path = Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json");
@@ -28,7 +29,7 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection
             get => _connectionString;
         }
 
-         
+
 
     }
 }

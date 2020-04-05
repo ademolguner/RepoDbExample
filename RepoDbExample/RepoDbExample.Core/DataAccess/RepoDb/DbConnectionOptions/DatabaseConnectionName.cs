@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace RepoDbExample.DataAccess.Concrete.DbConnection
+namespace RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions
 {
     public enum DatabaseConnectionName
     {

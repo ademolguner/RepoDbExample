@@ -100,6 +100,18 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[4.1.3.1, )"
@@ -173,18 +185,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.Extensions.Configuration": {
-              "target": "Package",
-              "version": "[3.1.3, )"
-            },
-            "Microsoft.Extensions.Configuration.Abstractions": {
-              "target": "Package",
-              "version": "[3.1.3, )"
-            },
-            "Microsoft.Extensions.Configuration.Json": {
-              "target": "Package",
-              "version": "[3.1.3, )"
-            },
             "RepoDb.PostgreSql": {
               "target": "Package",
               "version": "[1.0.4, )"
