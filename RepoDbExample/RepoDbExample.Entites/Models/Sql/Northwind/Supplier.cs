@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
-    public class Supplier : IEntity
+    public class Supplier : IEntity, ISqlEntityType
     {
         public Supplier()
         {

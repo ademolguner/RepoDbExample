@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace RepoDbExample.Entites.Models.Sql.AdemBlogDb
 {
-    public class Post : IEntity
+    public class Post : IEntity, ISqlEntityType
     {
         public int PostId { get; set; }
         public string Title { get; set; }

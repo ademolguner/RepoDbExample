@@ -2,7 +2,7 @@
 
 namespace RepoDbExample.Entites.Models.PostgreSql.Finans
 {
-    public class CashType : IEntity
+    public class CashType : IEntity, IPostgresqlEntityType
     {
         public int CashTypeId { get; set; }
         public string CashTypeName { get; set; }

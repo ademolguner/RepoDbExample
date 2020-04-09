@@ -3,7 +3,7 @@ using System;
 
 namespace RepoDbExample.Entites.Models.PostgreSql.Finans
 {
-    public class Currency : IEntity
+    public class Currency : IEntity, IPostgresqlEntityType
     {
         public int CurrencyId { get; set; }
         public string Name { get; set; }

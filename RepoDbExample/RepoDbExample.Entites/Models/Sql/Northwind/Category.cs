@@ -5,7 +5,7 @@ using RepoDbExample.Core.Entities;
 
 namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
-    public class Category : IEntity
+    public class Category : IEntity, ISqlEntityType
     {
         public Category()
         {

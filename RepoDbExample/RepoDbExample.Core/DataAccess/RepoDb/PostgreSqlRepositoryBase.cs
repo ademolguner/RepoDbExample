@@ -13,7 +13,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
 {
 
     public class PostgreSqlRepositoryBase<TEntity, DbConnection> : IRepository<TEntity>
-         where TEntity : class, IEntity, new()
+         where TEntity : class, IEntity, IPostgresqlEntityType, new()
          where DbConnection : System.Data.IDbConnection, new()
     {
 

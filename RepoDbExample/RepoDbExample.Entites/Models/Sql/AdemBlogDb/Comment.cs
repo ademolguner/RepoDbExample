@@ -3,7 +3,7 @@ using System;
 
 namespace RepoDbExample.Entites.Models.Sql.AdemBlogDb
 {
-    public class Comment : IEntity
+    public class Comment : IEntity, ISqlEntityType
     {
         public int CommentId { get; set; }
         public string CommentContent { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
-    public class OrderDetail : IEntity
+    public class OrderDetail : IEntity, ISqlEntityType
     {
         public int OrderID { get; set; }
         public int ProductID { get; set; }

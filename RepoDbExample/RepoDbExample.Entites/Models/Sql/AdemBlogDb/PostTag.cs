@@ -2,7 +2,7 @@
 
 namespace RepoDbExample.Entites.Models.Sql.AdemBlogDb
 {
-    public class PostTag : IEntity
+    public class PostTag : IEntity, ISqlEntityType
     {
         public int PostTagId { get; set; }
         public int PostId { get; set; }

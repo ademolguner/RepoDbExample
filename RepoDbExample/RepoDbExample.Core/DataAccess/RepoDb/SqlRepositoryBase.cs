@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace RepoDbExample.Core.DataAccess.RepoDb
 {
     public class SqlRepositoryBase<TEntity, DbConnection> : IRepository<TEntity>
-         where TEntity : class, IEntity, new()
+         where TEntity : class, IEntity, ISqlEntityType,new()
          where DbConnection : System.Data.IDbConnection, new()
     {
 

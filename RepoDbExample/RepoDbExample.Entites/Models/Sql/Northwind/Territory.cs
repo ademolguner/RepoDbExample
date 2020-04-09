@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
-    public class Territory : IEntity
+    public class Territory : IEntity, ISqlEntityType
     {
         public Territory()
         {
