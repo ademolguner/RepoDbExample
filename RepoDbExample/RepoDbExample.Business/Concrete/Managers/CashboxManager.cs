@@ -23,7 +23,7 @@ namespace RepoDbExample.Business.Concrete.Managers
 
         public IEnumerable<Cashbox> QueryAll()
         {
-           return _cashboxDal.QueryAll();
+           return _cashboxDal.GetList();
         }
     }
 }

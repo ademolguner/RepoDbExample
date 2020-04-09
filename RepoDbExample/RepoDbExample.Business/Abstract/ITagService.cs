@@ -9,5 +9,7 @@ namespace RepoDbExample.Business.Abstract
     {
         IEnumerable<Tag> TumunuGetir();
         void NewTagItem(Tag tag);
+        Tag GetById(int id);
+        Tag GetByTagName(string tagName);
     }
 }

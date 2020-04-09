@@ -61,6 +61,10 @@
               "target": "Package",
               "version": "[1.10.10, )"
             },
+            "RepoDb.SqlServer": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.1, )"

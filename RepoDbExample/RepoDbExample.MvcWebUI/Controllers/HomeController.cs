@@ -32,6 +32,10 @@ namespace RepoDbExample.MvcWebUI.Controllers
 
         public IActionResult Index()
         {
+            
+           // var data = _tagService.GetById(14);
+            var tagData = _tagService.GetByTagName("RepoDb");
+
             _categoryService.NewItem(new Entites.Models.Sql.Northwind.Category { CategoryName = "Testere", Description = "denem" });
              _categoryService.QueryAll();
 

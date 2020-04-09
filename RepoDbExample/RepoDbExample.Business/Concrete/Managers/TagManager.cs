@@ -1,4 +1,5 @@
-﻿using RepoDbExample.Business.Abstract;
+﻿using RepoDb;
+using RepoDbExample.Business.Abstract;
 using RepoDbExample.DataAccess.Abstract;
 using RepoDbExample.Entites.Models.Sql.AdemBlogDb;
 using System;
@@ -17,7 +18,15 @@ namespace RepoDbExample.Business.Concrete.Managers
             _tagDal = tagDal;
         }
 
+        public Tag GetById(int id)
+        {
+            return _tagDal.Get(x => x.TagId == id);
+        }
 
+        public Tag GetByTagName(string tagName)
+        {
+            return _tagDal.Get(c => c.TagName == tagName);
+        }
 
         public void NewTagItem(Tag tag)
         {
@@ -26,7 +35,7 @@ namespace RepoDbExample.Business.Concrete.Managers
 
         public IEnumerable<Tag> TumunuGetir()
         {
-            return _tagDal.QueryAll();
+            return _tagDal.GetList();
         }
     }
 }

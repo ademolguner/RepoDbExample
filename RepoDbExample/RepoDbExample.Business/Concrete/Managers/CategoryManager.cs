@@ -25,7 +25,7 @@ namespace RepoDbExample.Business.Concrete.Managers
 
         public IEnumerable<Category> QueryAll()
         {
-           return  _categoryDal.QueryAll();
+           return  _categoryDal.GetList();
         }
     }
 }
