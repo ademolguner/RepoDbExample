@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using RepoDb;
 using RepoDbExample.Business.Abstract;
 using RepoDbExample.Business.Concrete.Managers;
+using RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions;
 using RepoDbExample.DataAccess.Abstract;
 using RepoDbExample.DataAccess.Concrete;
 using RepoDbExample.DataAccess.Concrete.DbConnection;
@@ -34,9 +35,9 @@ namespace RepoDbExample.MvcWebUI
         {
             
 
-            services.AddTransient<System.Data.IDbConnection, NwDbConnectionFactory>();
-            services.AddTransient<System.Data.IDbConnection, AoBlogDbConnectionFactory>();
-            services.AddTransient<System.Data.IDbConnection, FinansDbConnectionFactory>();
+            services.AddTransient<IDatabaseConnectionFactory, NwDbConnectionFactory>();
+            services.AddTransient<IDatabaseConnectionFactory, AoBlogDbConnectionFactory>();
+            services.AddTransient<IDatabaseConnectionFactory, FinansDbConnectionFactory>();
 
             services.AddTransient<ICategoryService, CategoryManager>();
             services.AddTransient<ICategoryDal, CategoryDal>();

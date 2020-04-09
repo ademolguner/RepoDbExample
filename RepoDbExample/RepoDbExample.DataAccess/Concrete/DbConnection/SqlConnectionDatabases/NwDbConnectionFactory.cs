@@ -6,65 +6,80 @@ using System.Data.SqlClient;
 
 namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
 {
-    public class NwDbConnectionFactory : IDbConnection
+    public class NwDbConnectionFactory : IDatabaseConnectionFactory//IDbConnection
     {
 
-
-        
         private string _connectionStringValue;
-
         public NwDbConnectionFactory()
-        { 
-            _connectionStringValue = new AppConfiguration(DatabaseConnectionName.NorthWind)._connectionString; // "Server=.;Database=Northwind;Integrated Security=SSPI;";
+        {
+            _connectionStringValue = new AppConfiguration(DatabaseConnectionName.NorthWind)._connectionString;
+            //CreateConnection();
         }
-
         public string ConnectionString
         {
             get { return _connectionStringValue; }
             set { ConnectionString = _connectionStringValue; }
         }
 
-        public int ConnectionTimeout => 10000;
-
-        public string Database => Database;
-
-        public ConnectionState State => State;
-
-
-
-        public IDbTransaction BeginTransaction()
+        public IDbConnection CreateConnection()
         {
-            return BeginTransaction();
+            return new SqlConnection(_connectionStringValue);
         }
 
-        public IDbTransaction BeginTransaction(IsolationLevel il)
-        {
-            return BeginTransaction(il);
-        }
+        //private string _connectionStringValue;
 
-        public void ChangeDatabase(string databaseName)
-        {
-            ChangeDatabase(databaseName);
-        }
+        //public NwDbConnectionFactory()
+        //{ 
+        //    _connectionStringValue = new AppConfiguration(DatabaseConnectionName.NorthWind)._connectionString; // "Server=.;Database=Northwind;Integrated Security=SSPI;";
+        //}
 
-        public void Close()
-        {
-            Close();
-        }
+        //public string ConnectionString
+        //{
+        //    get { return _connectionStringValue; }
+        //    set { ConnectionString = _connectionStringValue; }
+        //}
 
-        public IDbCommand CreateCommand()
-        {
-            return CreateCommand();
-        }
+        //public int ConnectionTimeout => 10000;
 
-        public void Dispose()
-        {
-            Dispose();
-        }
+        //public string Database => Database;
 
-        public void Open()
-        {
-            Open();
-        }
+        //public ConnectionState State => State;
+
+
+
+        //public IDbTransaction BeginTransaction()
+        //{
+        //    return BeginTransaction();
+        //}
+
+        //public IDbTransaction BeginTransaction(IsolationLevel il)
+        //{
+        //    return BeginTransaction(il);
+        //}
+
+        //public void ChangeDatabase(string databaseName)
+        //{
+        //    ChangeDatabase(databaseName);
+        //}
+
+        //public void Close()
+        //{
+        //    Close();
+        //}
+
+        //public IDbCommand CreateCommand()
+        //{
+        //    return CreateCommand();
+        //}
+
+        //public void Dispose()
+        //{
+        //    Dispose();
+        //}
+
+        //public void Open()
+        //{
+        //    Open();
+        //}
     }
 }

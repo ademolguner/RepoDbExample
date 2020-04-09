@@ -8,7 +8,7 @@ using System.Text;
 
 namespace RepoDbExample.DataAccess.Concrete
 {
-    public class CashboxDal : PostgreSqlRepositoryBase<Cashbox, FinansDbConnectionFactory>, ICashboxDal
+    public class CashboxDal : DbRepositoryBase<Cashbox, FinansDbConnectionFactory>, ICashboxDal
     {
     }
 }

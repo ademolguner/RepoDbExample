@@ -5,4 +5,4 @@ D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Core\o
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Core\obj\Debug\netcoreapp3.1\RepoDbExample.Core.AssemblyInfo.cs
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Core\obj\Debug\netcoreapp3.1\RepoDbExample.Core.dll
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Core\obj\Debug\netcoreapp3.1\RepoDbExample.Core.pdb
-D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Core\obj\Debug\netcoreapp3.1\RepoDbExample.Core.csprojAssemblyReference.cache
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.Core\obj\Debug\netcoreapp3.1\RepoDbExample.Core.csproj.CoreCompileInputs.cache

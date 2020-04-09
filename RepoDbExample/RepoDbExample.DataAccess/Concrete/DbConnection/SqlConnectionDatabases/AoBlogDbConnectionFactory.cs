@@ -6,62 +6,79 @@ using System.Data.SqlClient;
 
 namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
 {
-    public class AoBlogDbConnectionFactory : IDbConnection
+    public class AoBlogDbConnectionFactory : IDatabaseConnectionFactory//IDbConnection
     {
 
         private string _connectionStringValue;
         public AoBlogDbConnectionFactory()
         {
             _connectionStringValue = new AppConfiguration(DatabaseConnectionName.AdemBlogDb)._connectionString;
+            //CreateConnection();
         }
-
         public string ConnectionString
         {
             get { return _connectionStringValue; }
             set { ConnectionString = _connectionStringValue; }
         }
 
-        public int ConnectionTimeout => 10000;
-
-        public string Database => Database;
-
-        public ConnectionState State => State;
-
-
-
-        public IDbTransaction BeginTransaction()
+        public IDbConnection CreateConnection()
         {
-            return BeginTransaction();
+            return new SqlConnection(_connectionStringValue);
         }
 
-        public IDbTransaction BeginTransaction(IsolationLevel il)
-        {
-            return BeginTransaction(il);
-        }
+        //private string _connectionStringValue;
+        //public AoBlogDbConnectionFactory()
+        //{
+        //    _connectionStringValue = new AppConfiguration(DatabaseConnectionName.AdemBlogDb)._connectionString;
+        //}
 
-        public void ChangeDatabase(string databaseName)
-        {
-            ChangeDatabase(databaseName);
-        }
+        //public string ConnectionString
+        //{
+        //    get { return _connectionStringValue; }
+        //    set { ConnectionString = _connectionStringValue; }
+        //}
 
-        public void Close()
-        {
-            Close();
-        }
+        //public int ConnectionTimeout => 10000;
 
-        public IDbCommand CreateCommand()
-        {
-            return CreateCommand();
-        }
+        //public string Database => Database;
 
-        public void Dispose()
-        {
-            Dispose();
-        }
+        //public ConnectionState State => State;
 
-        public void Open()
-        {
-            Open();
-        }
+
+
+        //public IDbTransaction BeginTransaction()
+        //{
+        //    return BeginTransaction();
+        //}
+
+        //public IDbTransaction BeginTransaction(IsolationLevel il)
+        //{
+        //    return BeginTransaction(il);
+        //}
+
+        //public void ChangeDatabase(string databaseName)
+        //{
+        //    ChangeDatabase(databaseName);
+        //}
+
+        //public void Close()
+        //{
+        //    Close();
+        //}
+
+        //public IDbCommand CreateCommand()
+        //{
+        //    return CreateCommand();
+        //}
+
+        //public void Dispose()
+        //{
+        //    Dispose();
+        //}
+
+        //public void Open()
+        //{
+        //    Open();
+        //}
     }
 }
