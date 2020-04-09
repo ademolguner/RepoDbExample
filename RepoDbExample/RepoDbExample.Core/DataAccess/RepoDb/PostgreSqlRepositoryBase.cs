@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq.Expressions;
 using System.Text;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace RepoDbExample.Core.DataAccess.RepoDb
 {
@@ -31,39 +32,113 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             return data;
         }
 
-        public void Insert(TEntity entity)
+        public TEntity Insert(TEntity entity)
         {
-            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString);
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
             var data = conn.Insert(entity);
+            return entity;
         }
 
-        public void Update(TEntity entity)
+        public int Update(TEntity entity)
         {
-            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString);
-            var data = conn.Update(entity);
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = conn.Update(entity);
+            return rowsAffected;
         }
 
-        public void Delete(TEntity entity)
+        public int Delete(TEntity entity)
         {
-            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString);
-            var data = conn.Delete(entity);
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = conn.Delete(entity);
+            return rowsAffected;
         }
 
-        
-        public List<T> BulkInsert<T>(List<T> bulkInsetData)
+
+
+        #region Crup operasyonları BULK Islemleri
+        public int BulkInsert(IEnumerable<TEntity> bulkInsetData)
         {
-            throw new NotImplementedException();
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = conn.InsertAll<TEntity>(bulkInsetData);
+            return rowsAffected;
+        }
+        public int BulkUpdate(IEnumerable<TEntity> bulkUpdateData)
+        {
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = conn.UpdateAll<TEntity>(bulkUpdateData);
+            return rowsAffected;
+        }
+        public int BulkDelete(IEnumerable<TEntity> bulkDeleteData)
+        {
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = conn.DeleteAll<TEntity>(bulkDeleteData);
+            return rowsAffected;
+        }
+        #endregion
+
+
+
+        #region async method işlemleri
+
+
+
+        public async Task<List<TEntity>> GetListAsync(Expression<Func<TEntity, bool>> filter = null)
+        {
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var data = await conn.QueryAllAsync<TEntity>();
+            return data.ToList();
         }
 
-        public void BulkDelete<T>(List<T> bulkInsetData)
+        public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> filter)
         {
-            throw new NotImplementedException();
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var data = await conn.QueryAsync<TEntity>(filter);
+            return data.FirstOrDefault();
         }
 
-        public List<T> BulkUpdate<T>(List<T> bulkInsetData)
+        public async Task<TEntity> InsertAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var data = await conn.InsertAsync(entity);
+            return entity;
         }
+
+        public async Task<int> UpdateAsync(TEntity entity)
+        {
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = conn.UpdateAsync(entity);
+            return await rowsAffected;
+        }
+
+        public async Task<int> DeleteAsync(TEntity entity)
+        {
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = conn.DeleteAsync(entity);
+            return await rowsAffected;
+        }
+
+
+        public async Task<int> BulkInsertAsync(IEnumerable<TEntity> bulkInsetData)
+        {
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = await conn.InsertAllAsync<TEntity>(bulkInsetData);
+            return rowsAffected;
+        }
+
+        public async Task<int> BulkUpdateAsync(IEnumerable<TEntity> bulkUpdateData)
+        {
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = await conn.UpdateAllAsync<TEntity>(bulkUpdateData);
+            return rowsAffected;
+        }
+
+        public async Task<int> BulkDeleteAsync(IEnumerable<TEntity> bulkDeleteData)
+        {
+            using var conn = new NpgsqlConnection(new DbConnection().ConnectionString).EnsureOpen();
+            var rowsAffected = await conn.DeleteAllAsync<TEntity>(bulkDeleteData);
+            return rowsAffected;
+        }
+        #endregion
 
     }
 }

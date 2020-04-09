@@ -18,7 +18,7 @@ namespace RepoDbExample.Core.DataAccess
         int Update(T entity);
         int Delete(T entity);
 
-        // BULK ISlemleri
+        //BULK ISlemleri
         int BulkInsert(IEnumerable<T> bulkInsetData);
         int BulkUpdate(IEnumerable<T> bulkUpdateData);
         int BulkDelete(IEnumerable<T> bulkDeleteData);
