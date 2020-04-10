@@ -35,5 +35,9 @@ namespace RepoDbExample.Core.DataAccess
         Task<int> BulkInsertAsync(IEnumerable<T> bulkInsetData);
         Task<int> BulkUpdateAsync(IEnumerable<T> bulkUpdateData);
         Task<int> BulkDeleteAsync(IEnumerable<T> bulkDeleteData);
+
+
+
+         
     }
 }
