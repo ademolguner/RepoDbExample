@@ -9,6 +9,6 @@ namespace RepoDbExample.Business.Abstract
     {
         void NewItem(Category category);
 
-        IEnumerable<Category> QueryAll();
+        IEnumerable<Category> TumunuGetir();
     }
 }

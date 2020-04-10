@@ -1,8 +1,10 @@
-﻿using RepoDbExample.Business.Abstract;
+﻿using RepoDb;
+using RepoDbExample.Business.Abstract;
 using RepoDbExample.DataAccess.Abstract;
 using RepoDbExample.Entites.Models.PostgreSql.Finans;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace RepoDbExample.Business.Concrete.Managers
@@ -25,5 +27,11 @@ namespace RepoDbExample.Business.Concrete.Managers
         {
            return _cashboxDal.GetList();
         }
+
+        public IEnumerable<Cashbox> SiraliGetir(Expression<Func<Cashbox, bool>> filter = null, IEnumerable<OrderField> queryOrderBy = null)
+        {
+            return _cashboxDal.GetListOrderByQuery(filter, queryOrderBy);
+        }
+         
     }
 }

@@ -49,6 +49,9 @@ namespace RepoDbExample.MvcWebUI
             services.AddTransient<ITagService, TagManager>();
             services.AddTransient<ITagDal, TagDal>();
 
+            services.AddTransient<IPostService, PostManager>();
+            services.AddTransient<IPostDal, PostDal>();
+
             SqlServerBootstrap.Initialize();
             PostgreSqlBootstrap.Initialize();
             // nosql ekle baska bişi ekle

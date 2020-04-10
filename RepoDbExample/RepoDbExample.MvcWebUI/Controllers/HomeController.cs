@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using RepoDb;
+using RepoDb.Enumerations;
 using RepoDbExample.Business.Abstract;
 using RepoDbExample.Entites.Models.PostgreSql.Finans;
 using RepoDbExample.Entites.Models.Sql.AdemBlogDb;
@@ -15,35 +17,48 @@ namespace RepoDbExample.MvcWebUI.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
         private readonly ICategoryService _categoryService;
         private readonly ICashboxService _cashboxService;
         private readonly ITagService _tagService;
+        private readonly IPostService _postService;
 
 
 
-        public HomeController(ILogger<HomeController> logger, ICategoryService categoryService, ICashboxService cashboxService, ITagService tagService)
+        public HomeController(ICategoryService categoryService, ICashboxService cashboxService, ITagService tagService, IPostService postService)
         {
-            _logger = logger;
+
             _categoryService = categoryService;
             _cashboxService = cashboxService;
             _tagService = tagService;
+            _postService = postService;
         }
 
         public IActionResult Index()
         {
-            
-           // var data = _tagService.GetById(14);
+            var sort = new[] { new OrderField("Title", RepoDb.Enumerations.Order.Ascending),
+                               new OrderField("UserId", RepoDb.Enumerations.Order.Descending)
+                             };
+
+          //  var cashboxListem = _cashboxService.SiraliGetir(c => c.CashTypeId == 1, sort);
+
+            var siraliPostListem = _postService.SiraliGetir(c => c.CategoryId == 5, sort);
+
+            // var data = _tagService.GetById(14);
             var tagData = _tagService.GetByTagName("RepoDb");
 
             _categoryService.NewItem(new Entites.Models.Sql.Northwind.Category { CategoryName = "Testere", Description = "denem" });
-             _categoryService.QueryAll();
+            _categoryService.TumunuGetir();
+
 
             _tagService.NewTagItem(new Tag { TagName = "RepoDB" });
             _tagService.TumunuGetir();
 
             _cashboxService.NewItem(new Cashbox { CashTypeId = 1, TotalQuantity = 45 });
             _cashboxService.QueryAll();
+
+
+
 
             return View();
         }

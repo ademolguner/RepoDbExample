@@ -23,9 +23,10 @@ namespace RepoDbExample.Business.Concrete.Managers
             _categoryDal.Insert(category);
         }
 
-        public IEnumerable<Category> QueryAll()
+
+        public IEnumerable<Category> TumunuGetir()
         {
-           return  _categoryDal.GetList();
+            return _categoryDal.GetList();
         }
     }
 }

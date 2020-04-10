@@ -1,4 +1,5 @@
 ﻿using RepoDb;
+using RepoDb.Enumerations;
 using RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions;
 using RepoDbExample.Core.Entities;
 using System;
@@ -136,13 +137,22 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             var rowsAffected = await conn.DeleteAllAsync<TEntity>(bulkDeleteData);
             return rowsAffected;
         }
- 
+
+
+
+
+
+
         #endregion
 
 
         #region sql işlkemleri script
-
-        
+        public List<TEntity> GetListOrderByQuery(Expression<Func<TEntity, bool>> filter = null, IEnumerable<OrderField> queryOrderBy = null)
+        {
+            using var conn = new DbConnection().CreateConnection();
+            var data = conn.Query<TEntity>(filter, orderBy: queryOrderBy).ToList();
+            return data;
+        }
 
         #endregion
     }
