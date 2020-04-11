@@ -30,7 +30,7 @@ namespace RepoDbExample.Business.Concrete.Managers
 
         public IEnumerable<Cashbox> SiraliGetir(Expression<Func<Cashbox, bool>> filter = null, IEnumerable<OrderField> queryOrderBy = null)
         {
-            return _cashboxDal.GetListOrderByQuery(filter, queryOrderBy);
+            return _cashboxDal.GetList(filter, queryOrderBy);
         }
          
     }

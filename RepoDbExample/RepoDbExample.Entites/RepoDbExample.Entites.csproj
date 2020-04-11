@@ -9,7 +9,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ComplexTYpes\" />
+    <Folder Include="Models\PostgreSql\Finans\ComplexTypes\" />
+    <Folder Include="Models\Sql\Northwind\ComplexTypes\" />
   </ItemGroup>
 
 </Project>

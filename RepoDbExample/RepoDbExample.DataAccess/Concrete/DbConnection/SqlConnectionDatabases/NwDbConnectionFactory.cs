@@ -9,7 +9,7 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
     public class NwDbConnectionFactory : IDatabaseConnectionFactory
     {
 
-        private string _connectionStringValue;
+        private readonly string _connectionStringValue;
         public NwDbConnectionFactory()
         {
             _connectionStringValue = new AppConfiguration(DatabaseConnectionName.NorthWind)._connectionString;

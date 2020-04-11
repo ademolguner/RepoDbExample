@@ -4,8 +4,10 @@ using RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions;
 using RepoDbExample.Core.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,19 +17,79 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
           where TEntity : class, IEntity, new()
           where DbConnection : IDatabaseConnectionFactory, new()
     {
-        #region GetDefault Repository Methods
+        #region Standar CRUD işlemleri için metoto işlemleri
 
-        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter = null)
+
+        public List<TEntity> GetList()
         {
             using var conn = new DbConnection().CreateConnection();
             var data = conn.QueryAll<TEntity>().ToList();
             return data;
         }
 
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter)
+        {
+            using var conn = new DbConnection().CreateConnection();
+            var data = conn.Query<TEntity>(where: filter).ToList();
+            return data;
+        }
+
+        public List<TEntity> GetList(IEnumerable<OrderField> orderByFilter)
+        {
+            using var conn = new DbConnection().CreateConnection();
+            var data = conn.QueryAll<TEntity>(orderBy: orderByFilter).ToList();
+            return data;
+        }
+
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, IEnumerable<OrderField> orderByFilter)
+        {
+            using var conn = new DbConnection().CreateConnection();
+            var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter).ToList();
+            return data;
+        }
+
+        public List<TEntity> GetList(int count)
+        {
+            using var conn = new DbConnection().CreateConnection();
+            List<TEntity> data = conn.QueryAll<TEntity>().Take(count).ToList();
+            return data;
+        }
+
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, int count)
+        {
+            using var conn = new DbConnection().CreateConnection();
+            List<TEntity> data = conn.Query<TEntity>(where: filter).Take(count).ToList();
+            return data;
+        }
+
+        public List<TEntity> GetList(IEnumerable<OrderField> orderByFilter, int count)
+        {
+            using var conn = new DbConnection().CreateConnection();
+            List<TEntity> data = conn.QueryAll<TEntity>(orderBy: orderByFilter).Take(count).ToList();
+            return data;
+        }
+
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, IEnumerable<OrderField> orderByFilter, int count)
+        {
+            using var conn = new DbConnection().CreateConnection();
+            var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter, top: count).ToList();
+            return data;
+        }
+
+
+
+
         public TEntity Get(Expression<Func<TEntity, bool>> filter)
         {
             using var conn = new DbConnection().CreateConnection();
             var data = conn.Query<TEntity>(filter).FirstOrDefault();
+            return data;
+        }
+
+        public TEntity Get(Expression<Func<TEntity, bool>> filter, IEnumerable<OrderField> orderByFilter)
+        {
+            using var conn = new DbConnection().CreateConnection();
+            var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter).FirstOrDefault();
             return data;
         }
 
@@ -54,7 +116,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
         #endregion
 
 
-        #region Crup operasyonları BULK Islemleri
+        #region BULK Işlemleri Metot imzaları işlemleri
         public int BulkInsert(IEnumerable<TEntity> bulkInsetData)
         {
             using var conn = new DbConnection().CreateConnection();
@@ -77,7 +139,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
 
 
 
-        #region async method işlemleri
+        #region (Asenkron) Standar CRUD işlemleri için metot işlemleri
 
 
 
@@ -115,8 +177,9 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             var rowsAffected = conn.DeleteAsync(entity);
             return await rowsAffected;
         }
+        #endregion
 
-
+        #region(Asenkron) BULK Işlemleri Metot işlemleri
         public async Task<int> BulkInsertAsync(IEnumerable<TEntity> bulkInsetData)
         {
             using var conn = new DbConnection().CreateConnection();
@@ -143,16 +206,62 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
 
 
 
+
+
+
         #endregion
 
 
-        #region sql işlkemleri script
-        public List<TEntity> GetListOrderByQuery(Expression<Func<TEntity, bool>> filter = null, IEnumerable<OrderField> queryOrderBy = null)
-        {
-            using var conn = new DbConnection().CreateConnection();
-            var data = conn.Query<TEntity>(filter, orderBy: queryOrderBy).ToList();
-            return data;
-        }
+        #region sql stringtext veya stored procedure işlemleri
+        //public List<TEntity> GetListOrderByQuery(Expression<Func<TEntity, bool>> filter = null, IEnumerable<OrderField> queryOrderBy = null)
+        //{
+        //    using var conn = new DbConnection().CreateConnection();
+        //    var data = conn.Query<TEntity>(filter, orderBy: queryOrderBy).ToList();
+        //    return data;
+        //}
+
+
+
+
+
+        //public IEnumerable<TEntity> ExecuteQuery(string commandText, object param = null, CommandType? commandType = null)
+        //{
+        //    using var conn = new DbConnection().CreateConnection();
+        //    var data = conn.ExecuteQuery<TEntity>(commandText, param, commandType);
+        //    return data;
+        //}
+
+
+
+        //public IEnumerable<TEntity> ExecuteQuery(string commandText, object param = null, CommandType? commandType = null)
+        //{
+        //    using var dbCconnection = new DbConnection().CreateConnection();
+        //    var data = dbCconnection.ExecuteQuery<TEntity>(commandText, param, commandType);
+        //    return data;
+        //}
+
+        #endregion
+
+
+        #region  Kontrol Metotoları
+
+        //private bool GetClassAttrşbutesControl(object className, IEnumerable<OrderField> orderFields)
+        //{
+        //    Type myType = typeof(className.GetType());
+
+        //    var myPropInfo2 = myType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+        //    bool a = myPropInfo2.Any(c => orderFields.Select(x=> x.Name).ToList().Contains(c));
+        //    //orderFields.Where(x=> x.Name)
+
+
+        //    foreach (var item in orderFields)
+        //    {
+        //        myPropInfo2.Any(x=> x.Name.Contains(item.Name))
+        //    }
+
+        //    return true;
+        //}
 
         #endregion
     }

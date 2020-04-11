@@ -8,8 +8,7 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
 {
     public class AoBlogDbConnectionFactory : IDatabaseConnectionFactory
     {
-
-        private string _connectionStringValue;
+        private readonly string _connectionStringValue;
         public AoBlogDbConnectionFactory()
         {
             _connectionStringValue = new AppConfiguration(DatabaseConnectionName.AdemBlogDb)._connectionString;
@@ -23,8 +22,6 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
         public IDbConnection CreateConnection()
         {
             return new SqlConnection(_connectionStringValue);
-        }
-
-        
+        } 
     }
 }

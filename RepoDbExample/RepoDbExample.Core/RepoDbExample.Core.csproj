@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="DataAccess\IQueryableRepository.cs" />
     <Compile Remove="DataAccess\RepoDb\PostgreSqlRepositoryBase.cs" />
-    <Compile Remove="DataAccess\RepoDb\QueryableRepositoryBase.cs" />
     <Compile Remove="DataAccess\RepoDb\SqlRepositoryBase.cs" />
   </ItemGroup>
 

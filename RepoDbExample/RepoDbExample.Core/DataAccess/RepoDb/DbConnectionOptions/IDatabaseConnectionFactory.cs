@@ -8,7 +8,6 @@ namespace RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions
 {
    public  interface IDatabaseConnectionFactory
     {
-
         IDbConnection CreateConnection();
     }
 }
