@@ -64,23 +64,16 @@ namespace RepoDbExample.MvcWebUI.Controllers
             #endregion
 
 
-            //string queryText = @" select 
-            //                              p.PostId,
-            //                              p.Title,
-            //                              c.CategoryId,
-            //                              c.CategoryName
-            //                              FROM [AdemBlogDb].[dbo].[Post]  as p
-            //                        inner join [AdemBlogDb].[dbo].[Category] as c on c.CategoryId=p.CategoryId";
+            string queryText =  @" select 
+                                          p.PostId,
+                                          p.Title,
+                                          c.CategoryId,
+                                          c.CategoryName
+                                     FROM [AdemBlogDb].[dbo].[Post]  as p
+                               inner join [AdemBlogDb].[dbo].[Category] as c on c.CategoryId=p.CategoryId";
 
-            //var midirRepo = postInfoRepo.GetByExecuteTextQuery(queryText, null);
-
-
-            //var sort = new[] { new OrderField("Title", RepoDb.Enumerations.Order.Ascending),
-            //                   new OrderField("CategoryId", RepoDb.Enumerations.Order.Descending)
-            //                 };
-
-
-
+            var midirRepoText = postInfoRepo.GetByExecuteTextQuery(queryText, null);
+            var midirRepoProcedure = postInfoRepo.GetByExecuteStoredProcedureQuery("[dbo].[PostInfoList]", null);
 
 
             var postListem1 = _postService.TumPostlariGetir();
@@ -102,30 +95,7 @@ namespace RepoDbExample.MvcWebUI.Controllers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+             
 
 
             var data = _tagService.GetById(14);
