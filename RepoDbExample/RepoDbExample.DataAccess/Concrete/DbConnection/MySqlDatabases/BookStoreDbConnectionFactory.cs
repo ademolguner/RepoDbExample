@@ -7,7 +7,6 @@ using System.Text;
 
 namespace RepoDbExample.DataAccess.Concrete.DbConnection.MySqlDatabases
 {
-     
     public class BookStoreDbConnectionFactory : IDatabaseConnectionFactory
     {
         private readonly string _connectionStringValue;
@@ -28,3 +27,6 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.MySqlDatabases
         }
     }
 }
+
+
+
