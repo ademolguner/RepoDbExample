@@ -1,0 +1,19 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<RepoDbExample.Entites.Models.MySql.BookStore.Book>
+
+@foreach (var item in Model)
+{
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@item.CoverImage" alt="@item.BookName" style="height:300px;">
+            <div class="card-body">
+                <h5 class="card-title">@item.BookName</h5>
+                <p class="card-text">@item.Author</p>
+                <a href="#" class="btn btn-primary">Detay</a>
+            </div>
+        </div>
+    </div>
+        }

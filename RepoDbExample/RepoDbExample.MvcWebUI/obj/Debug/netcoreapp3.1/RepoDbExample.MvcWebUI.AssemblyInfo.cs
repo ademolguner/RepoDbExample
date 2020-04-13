@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("57b4c165-4561-4c6c-a58b-78ee6e26d57c")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("RepoDbExample.MvcWebUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
