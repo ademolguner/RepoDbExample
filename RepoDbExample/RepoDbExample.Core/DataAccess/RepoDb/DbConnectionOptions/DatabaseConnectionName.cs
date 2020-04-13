@@ -8,6 +8,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions
     {
         NorthWind,
         FinansDb,
-        AdemBlogDb
+        AdemBlogDb,
+        BookStore
     }
 }

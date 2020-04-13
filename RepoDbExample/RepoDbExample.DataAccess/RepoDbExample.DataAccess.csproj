@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="RepoDb.PostgreSql" Version="1.0.4" />
-    <PackageReference Include="RepoDb.SqlServer" Version="1.0.4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\RepoDbExample.Entites\RepoDbExample.Entites.csproj" />
   </ItemGroup>
 

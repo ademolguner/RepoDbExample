@@ -8,7 +8,7 @@ using System.Text;
 
 namespace RepoDbExample.DataAccess.Concrete
 {
-    public class CategoryDal : DbRepositoryBase<Category, NwDbConnectionFactory>, ICategoryDal
+    public class CategoryDal : DbRepositoryBase<Category, NorthWindDbConnectionFactory>, ICategoryDal
     {
         
     }

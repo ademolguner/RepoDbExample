@@ -48,10 +48,17 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             return data;
         }
 
+        
         public List<TEntity> GetList(int count)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
             List<TEntity> data = conn.QueryAll<TEntity>().Take(count).ToList();
+            return data;
+        }
+        public List<TEntity> GetList(int skip, int count)
+        {
+            using var conn = new DbConnection().CreateConnection().EnsureOpen();
+            List<TEntity> data = conn.QueryAll<TEntity>().Skip(skip).Take(count).ToList();
             return data;
         }
 
@@ -61,6 +68,12 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             List<TEntity> data = conn.Query<TEntity>(where: filter).Take(count).ToList();
             return data;
         }
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, int skip,int count)
+        {
+            using var conn = new DbConnection().CreateConnection().EnsureOpen();
+            List<TEntity> data = conn.Query<TEntity>(where: filter).Skip(skip).Take(count).ToList();
+            return data;
+        }
 
         public List<TEntity> GetList(IEnumerable<OrderField> orderByFilter, int count)
         {
@@ -68,14 +81,31 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             List<TEntity> data = conn.QueryAll<TEntity>(orderBy: orderByFilter).Take(count).ToList();
             return data;
         }
-
-        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, IEnumerable<OrderField> orderByFilter, int count)
+        public List<TEntity> GetList(IEnumerable<OrderField> orderByFilter, int skip, int count)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
-            var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter, top: count).ToList();
+            List<TEntity> data = conn.QueryAll<TEntity>(orderBy: orderByFilter).Skip(skip).Take(count).ToList();
             return data;
         }
 
+
+
+
+
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, IEnumerable<OrderField> orderByFilter,  int count)
+        {
+            using var conn = new DbConnection().CreateConnection().EnsureOpen();
+            var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter, top: count).ToList();
+            //var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter).Skip(skip).Take(count).ToList().ToList();
+            return data;
+        }
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, IEnumerable<OrderField> orderByFilter, int skip, int count)
+        {
+            using var conn = new DbConnection().CreateConnection().EnsureOpen();
+            //var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter, top: count).ToList();
+            var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter).Skip(skip).Take(count).ToList().ToList();
+            return data;
+        }
 
 
 
@@ -200,6 +230,14 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             var rowsAffected = await conn.DeleteAllAsync<TEntity>(bulkDeleteData);
             return rowsAffected;
         }
+
+        public List<TEntity> GetList2(Expression<Func<TEntity, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+
+
 
 
 

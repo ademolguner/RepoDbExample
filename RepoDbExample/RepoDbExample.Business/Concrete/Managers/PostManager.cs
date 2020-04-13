@@ -21,32 +21,17 @@ namespace RepoDbExample.Business.Concrete.Managers
             _postDal = postDal;
         }
 
-         /// <summary>
-         /// Acıklama
-         /// </summary>
-         /// <returns></returns>
+        
         public List<Post> TumPostlariGetir()
         {
             return _postDal.GetList();
         }
-
-        /// <summary>
-        /// Acıklama
-        /// </summary>
-        /// <param name="count"> Kac adet istiyorsunuz</param>
-        /// <returns></returns>
-        public List<Post> TumPostlariGetir_Adet(int count)
+        public List<Post> TumPostlariGetir_AktifOlanlari(bool isActive)
         {
-            return _postDal.GetList(count);
-        }
 
-        /// <summary>
-        /// Acıklama
-        /// </summary>
-        /// <param name="orderCreatedDate"> Sıralama parametresi CreatedDate-  Asc or Desc</param>
-        /// <param name="orderIsActive">Sıralama parametresi IsActive -  Asc or Desc</param>
-        /// <returns></returns>
-        public List<Post> TumPostlariGetir_Order(Order orderCreatedDate, Order orderIsActive)
+            return _postDal.GetList(x => x.IsActive == isActive);
+        }
+        public List<Post> TumPostlariGetir_SiralıOlsun_CreatedDate_Des_Aktif_Asc(Order orderCreatedDate, Order orderIsActive)
         {
             var sort = new[] { new OrderField("CreatedDate", orderCreatedDate),
                                new OrderField("IsActive", orderIsActive)
@@ -54,36 +39,42 @@ namespace RepoDbExample.Business.Concrete.Managers
 
             return _postDal.GetList(sort);
         }
-
-         
-        public List<Post> TumPostlariGetir_Order_Adet(Order orderCreatedDate, int count)
-        {
-            var sort = new[] { new OrderField("CreatedDate", orderCreatedDate) };
-            return _postDal.GetList(sort, count);
-        }
-
-         
-        public List<Post> TumPostlariGetir_Where(bool isActive)
-        {
-
-            return _postDal.GetList(x => x.IsActive == isActive);
-        }
-
-         
-        public List<Post> TumPostlariGetir_Where_Adet(bool isActive, int count)
-        {
-            return _postDal.GetList(x => x.IsActive == isActive, count);
-        }
-
-        
-        public List<Post> TumPostlariGetir_Where_Order(int categoryId, bool isActive, Order orderCreatedDate)
+        public List<Post> TumPostlariGetir_Where_CategoryIdGoreGetir_Sirala_CreatedDate(int categoryId, bool isActive, Order orderCreatedDate)
         {
             var sort = new[] { new OrderField("CreatedDate", orderCreatedDate) };
             return _postDal.GetList(c => c.CategoryId == categoryId && c.IsActive == isActive);
         }
 
-         
-        
+
+        public List<Post> TumPostlariGetir_Ilk_10_Adet(int count)
+        {
+            return _postDal.GetList(count);
+        }
+        public List<Post> TumPostlariGetir_Ilk_10_Atla_Sonraki_3_Adet(int skip, int count)
+        {
+            return _postDal.GetList(skip, count);
+        }
+
+        public List<Post> TumPostlariGetir_Where_Adet(bool isActive, int count)
+        {
+            return _postDal.GetList(x => x.IsActive == isActive, count);
+        }
+        public List<Post> TumPostlariGetir_Where_Adet(bool isActive, int skip, int count)
+        {
+            return _postDal.GetList(x => x.IsActive == isActive, skip, count);
+        }
+       
+        public List<Post> TumPostlariGetir_Order_Adet(Order orderCreatedDate, int count)
+        {
+            var sort = new[] { new OrderField("CreatedDate", orderCreatedDate) };
+            return _postDal.GetList(sort,  count);
+        }
+        public List<Post> TumPostlariGetir_Order_Adet(Order orderCreatedDate, int skip, int count)
+        {
+            var sort = new[] { new OrderField("CreatedDate", orderCreatedDate) };
+            return _postDal.GetList(sort, skip, count);
+        }
+
         public List<Post> TumPostlariGetir_Where_Order_Adet(int categoryId, bool isActive, Order orderCreatedDate, Order orderTitle, int adet)
         {
             var sort = new[] {
@@ -91,8 +82,18 @@ namespace RepoDbExample.Business.Concrete.Managers
                                 new OrderField("Title", orderTitle)
                               };
             return _postDal.GetList(c => c.CategoryId == categoryId && c.IsActive == isActive, sort, adet);
+
         }
 
+        public List<Post> TumPostlariGetir_Where_Order_Adet(int categoryId, bool isActive, Order orderCreatedDate, Order orderTitle, int skip, int adet)
+        {
+            var sort = new[] {
+                                new OrderField("CreatedDate", orderCreatedDate),
+                                new OrderField("Title", orderTitle)
+                              };
+            return _postDal.GetList(c => c.CategoryId == categoryId && c.IsActive == isActive, sort, skip, adet);
+        }
+       
         //public List<Post> TumPostlariGetir()
         //{
         //    return _postDal.GetList();

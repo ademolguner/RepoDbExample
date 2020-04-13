@@ -6,11 +6,11 @@ using System.Data.SqlClient;
 
 namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
 {
-    public class NwDbConnectionFactory : IDatabaseConnectionFactory
+    public class NorthWindDbConnectionFactory : IDatabaseConnectionFactory
     {
 
         private readonly string _connectionStringValue;
-        public NwDbConnectionFactory()
+        public NorthWindDbConnectionFactory()
         {
             _connectionStringValue = new AppConfiguration(DatabaseConnectionName.NorthWind)._connectionString;
         }

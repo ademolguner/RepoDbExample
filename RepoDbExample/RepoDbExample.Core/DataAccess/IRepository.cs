@@ -12,23 +12,37 @@ namespace RepoDbExample.Core.DataAccess
 {
     public interface IRepository<T> where T : class, IEntity, new()
     {
-        //Standar CRUD işlemleri için metoto imzaları
-        //List<T> GetList(Expression<Func<T, bool>> filter = null);
-
-
+        
         List<T> GetList();
         List<T> GetList(Expression<Func<T, bool>> filter);
         List<T> GetList(IEnumerable<OrderField> orderByFilter);
         List<T> GetList(Expression<Func<T, bool>> filter, IEnumerable<OrderField> orderByFilter);
         List<T> GetList(int count);
+        List<T> GetList(int skip, int count);
+
         List<T> GetList(Expression<Func<T, bool>> filter, int count);
+        List<T> GetList(Expression<Func<T, bool>> filter, int skip, int count);
+
         List<T> GetList(IEnumerable<OrderField> orderByFilter, int count);
-        List<T> GetList(Expression<Func<T, bool>> filter, IEnumerable<OrderField> orderByFilter, int count);
+        List<T> GetList(IEnumerable<OrderField> orderByFilter, int skip, int count);
+
+
+        List<T> GetList(Expression<Func<T, bool>> filter, IEnumerable<OrderField> orderByFilter,  int count);
+        List<T> GetList(Expression<Func<T, bool>> filter, IEnumerable<OrderField> orderByFilter, int skip, int count);
 
 
 
 
         T Get(Expression<Func<T, bool>> filter);
+        
+        
+        
+        
+        
+        
+        
+        
+        List<T> GetList2(Expression<Func<T, bool>> filter);
         T Get(Expression<Func<T, bool>> filter, IEnumerable<OrderField> orderByFilter);
         T Insert(T entity);
         int Update(T entity);

@@ -59,11 +59,19 @@
             },
             "RepoDb": {
               "target": "Package",
-              "version": "[1.10.10, )"
+              "version": "[1.10.11, )"
+            },
+            "RepoDb.MySql": {
+              "target": "Package",
+              "version": "[1.0.6, )"
+            },
+            "RepoDb.PostgreSql": {
+              "target": "Package",
+              "version": "[1.0.6, )"
             },
             "RepoDb.SqlServer": {
               "target": "Package",
-              "version": "[1.0.4, )"
+              "version": "[1.0.6, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",
@@ -129,16 +137,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "RepoDb.PostgreSql": {
-              "target": "Package",
-              "version": "[1.0.4, )"
-            },
-            "RepoDb.SqlServer": {
-              "target": "Package",
-              "version": "[1.0.4, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

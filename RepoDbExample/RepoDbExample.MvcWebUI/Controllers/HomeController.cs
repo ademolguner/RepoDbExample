@@ -4,6 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -24,27 +25,26 @@ namespace RepoDbExample.MvcWebUI.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
         private readonly ICategoryService _categoryService;
         private readonly ICashboxService _cashboxService;
         private readonly ITagService _tagService;
         private readonly IPostService _postService;
-        //private readonly IQueryableRepository<PostInfo> _queryableRepository;
         public QueryableRepositoryBase<PostInfo, AoBlogDbConnectionFactory> postInfoRepo = new QueryableRepositoryBase<PostInfo, AoBlogDbConnectionFactory>();
-
-        public HomeController(ICategoryService categoryService, ICashboxService cashboxService, ITagService tagService, IPostService postService
-            //, IQueryableRepository<PostInfo> queryableRepository
-            )
+        public readonly IBookService _bookService;
+        public HomeController(ICategoryService categoryService, ICashboxService cashboxService, ITagService tagService, IPostService postService, IBookService bookService)
         {
 
             _categoryService = categoryService;
             _cashboxService = cashboxService;
             _tagService = tagService;
             _postService = postService;
+            _bookService = bookService;
         }
 
         public IActionResult Index()
         {
+
+            var kitaplar = _bookService.TumKitaplariGetir();
 
             #region yardımcı test kodları
             //Type myType = typeof(Post);
@@ -64,7 +64,7 @@ namespace RepoDbExample.MvcWebUI.Controllers
             #endregion
 
 
-            string queryText =  @" select 
+            string queryText = @" select 
                                           p.PostId,
                                           p.Title,
                                           c.CategoryId,
@@ -78,24 +78,26 @@ namespace RepoDbExample.MvcWebUI.Controllers
 
             var postListem1 = _postService.TumPostlariGetir();
 
-            var postListem2 = _postService.TumPostlariGetir_Where(true);
+            var postListem2 = _postService.TumPostlariGetir_AktifOlanlari(true);
 
-            var postListem3 = _postService.TumPostlariGetir_Order(RepoDb.Enumerations.Order.Ascending, RepoDb.Enumerations.Order.Descending);
+            var postListem3 = _postService.TumPostlariGetir_SiralıOlsun_CreatedDate_Des_Aktif_Asc(RepoDb.Enumerations.Order.Descending, RepoDb.Enumerations.Order.Ascending);
 
-            var postListem4 = _postService.TumPostlariGetir_Where_Order(5, false, RepoDb.Enumerations.Order.Ascending);
+            var postListem4 = _postService.TumPostlariGetir_Where_CategoryIdGoreGetir_Sirala_CreatedDate(5, false, RepoDb.Enumerations.Order.Ascending);
 
-            var postListem5 = _postService.TumPostlariGetir_Adet(3);
+            //var postListem5 = _postService.TumPostlariGetir_Adet(3);
+            //var postListem5_1 = _postService.TumPostlariGetir_Adet(1, 3);
 
-            var postListem6 = _postService.TumPostlariGetir_Where_Adet(true, 3);
+            var postListem6 = _postService.TumPostlariGetir_Where_Adet(true, 0, 3);
+            var postListem6_1 = _postService.TumPostlariGetir_Where_Adet(true, 3);
 
-            var postListem7 = _postService.TumPostlariGetir_Order_Adet(RepoDb.Enumerations.Order.Ascending, 3);
+            var postListem7 = _postService.TumPostlariGetir_Order_Adet(RepoDb.Enumerations.Order.Ascending, 0, 3);
 
-            var postListem8 = _postService.TumPostlariGetir_Where_Order_Adet(5, true, RepoDb.Enumerations.Order.Ascending, RepoDb.Enumerations.Order.Descending, 3);                                         
+            var postListem8 = _postService.TumPostlariGetir_Where_Order_Adet(5, true, RepoDb.Enumerations.Order.Ascending, RepoDb.Enumerations.Order.Descending, 0, 3);
+
+            
 
 
 
-
-             
 
 
             var data = _tagService.GetById(14);

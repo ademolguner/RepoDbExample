@@ -16,6 +16,7 @@ using RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions;
 using RepoDbExample.DataAccess.Abstract;
 using RepoDbExample.DataAccess.Concrete;
 using RepoDbExample.DataAccess.Concrete.DbConnection;
+using RepoDbExample.DataAccess.Concrete.DbConnection.MySqlDatabases;
 using RepoDbExample.DataAccess.Concrete.DbConnection.PostgreSqLConnectionDatabases;
 using RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases;
 
@@ -35,9 +36,10 @@ namespace RepoDbExample.MvcWebUI
         {
             
 
-            services.AddTransient<IDatabaseConnectionFactory, NwDbConnectionFactory>();
+            services.AddTransient<IDatabaseConnectionFactory, NorthWindDbConnectionFactory>();
             services.AddTransient<IDatabaseConnectionFactory, AoBlogDbConnectionFactory>();
             services.AddTransient<IDatabaseConnectionFactory, FinansDbConnectionFactory>();
+            services.AddTransient<IDatabaseConnectionFactory, BookStoreDbConnectionFactory>();
 
             services.AddTransient<ICategoryService, CategoryManager>();
             services.AddTransient<ICategoryDal, CategoryDal>();
@@ -52,9 +54,13 @@ namespace RepoDbExample.MvcWebUI
             services.AddTransient<IPostService, PostManager>();
             services.AddTransient<IPostDal, PostDal>();
 
+            services.AddTransient<IBookService, BookManager>();
+            services.AddTransient<IBookDal, BookDal>();
+
             SqlServerBootstrap.Initialize();
             PostgreSqlBootstrap.Initialize();
-            // nosql ekle baska bişi ekle
+            MySqlBootstrap.Initialize();
+            
 
             services.AddControllersWithViews();
         }
