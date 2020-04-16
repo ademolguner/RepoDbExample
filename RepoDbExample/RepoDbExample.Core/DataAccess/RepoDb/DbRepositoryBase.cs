@@ -1,4 +1,5 @@
-﻿using RepoDb;
+﻿using MySqlX.XDevAPI.Common;
+using RepoDb;
 using RepoDb.Enumerations;
 using RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions;
 using RepoDbExample.Core.Entities;
@@ -16,6 +17,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
     public class DbRepositoryBase<TEntity, DbConnection> : IRepository<TEntity>
           where TEntity : class, IEntity, new()
           where DbConnection : IDatabaseConnectionFactory, new()
+
     {
         #region Standar CRUD işlemleri için metoto işlemleri
 
@@ -48,7 +50,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             return data;
         }
 
-        
+
         public List<TEntity> GetList(int count)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
@@ -65,13 +67,13 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
         public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, int count)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
-            List<TEntity> data = conn.Query<TEntity>(where: filter).Take(count).ToList();
+            List<TEntity> data = conn.Query<TEntity>(where: filter, top: count).ToList();
             return data;
         }
-        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, int skip,int count)
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, int skip, int count)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
-            List<TEntity> data = conn.Query<TEntity>(where: filter).Skip(skip).Take(count).ToList();
+            List<TEntity> data = conn.Query<TEntity>(where: filter, top: skip + count).Take(count).ToList();
             return data;
         }
 
@@ -92,18 +94,16 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
 
 
 
-        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, IEnumerable<OrderField> orderByFilter,  int count)
+        public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, IEnumerable<OrderField> orderByFilter, int count)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
             var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter, top: count).ToList();
-            //var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter).Skip(skip).Take(count).ToList().ToList();
             return data;
         }
         public List<TEntity> GetList(Expression<Func<TEntity, bool>> filter, IEnumerable<OrderField> orderByFilter, int skip, int count)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
-            //var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter, top: count).ToList();
-            var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter).Skip(skip).Take(count).ToList().ToList();
+            var data = conn.Query<TEntity>(where: filter, orderBy: orderByFilter, top: skip + count).Take(count).ToList().ToList();
             return data;
         }
 
@@ -129,7 +129,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             var data = conn.Insert(entity);
             return entity;
         }
-
+       
         public int Update(TEntity entity)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
@@ -137,9 +137,11 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             return rowsAffected;
         }
 
+
         public int Delete(TEntity entity)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
+           
             var rowsAffected = conn.Delete(entity);
             return rowsAffected;
         }
@@ -147,6 +149,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
 
 
         #region BULK Işlemleri Metot imzaları işlemleri
+
         public int BulkInsert(IEnumerable<TEntity> bulkInsetData)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
@@ -230,23 +233,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             var rowsAffected = await conn.DeleteAllAsync<TEntity>(bulkDeleteData);
             return rowsAffected;
         }
-
-        public List<TEntity> GetList2(Expression<Func<TEntity, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-
-
-
-
-
-
-
-
-
-
-
+         
         #endregion
 
 

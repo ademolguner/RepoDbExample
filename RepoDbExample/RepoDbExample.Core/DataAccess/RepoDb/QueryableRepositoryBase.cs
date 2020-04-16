@@ -76,7 +76,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             }
             return errorMessages.ToString();
         }
-        
+
         #endregion
     }
 }

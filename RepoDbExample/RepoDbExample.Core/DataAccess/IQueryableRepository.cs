@@ -1,11 +1,6 @@
-﻿using RepoDb;
-using RepoDbExample.Core.Entities;
-using System;
+﻿using RepoDbExample.Core.Entities;
+
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
 
 namespace RepoDbExample.Core.DataAccess
 {
@@ -13,7 +8,6 @@ namespace RepoDbExample.Core.DataAccess
     {
         IEnumerable<T> GetByExecuteTextQuery(string commandText, object param = null);
         IEnumerable<T> GetByExecuteStoredProcedureQuery(string commandText, object param = null);
-
-        //ExecuteQueryMultiple
+          
     }
 }

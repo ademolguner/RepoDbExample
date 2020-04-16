@@ -42,9 +42,9 @@ namespace RepoDbExample.Core.DataAccess
         
         
         
-        List<T> GetList2(Expression<Func<T, bool>> filter);
+       
         T Get(Expression<Func<T, bool>> filter, IEnumerable<OrderField> orderByFilter);
-        T Insert(T entity);
+        T Insert(T entity); 
         int Update(T entity);
         int Delete(T entity);
 
