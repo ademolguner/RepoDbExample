@@ -37,7 +37,7 @@ namespace RepoDbExample.MvcWebUI
             
 
             services.AddTransient<IDatabaseConnectionFactory, NorthWindDbConnectionFactory>();
-            services.AddTransient<IDatabaseConnectionFactory, AoBlogDbConnectionFactory>();
+            services.AddTransient<IDatabaseConnectionFactory, AdemBlogDbConnectionFactory>();
             services.AddTransient<IDatabaseConnectionFactory, FinansDbConnectionFactory>();
             services.AddTransient<IDatabaseConnectionFactory, BookStoreDbConnectionFactory>();
 

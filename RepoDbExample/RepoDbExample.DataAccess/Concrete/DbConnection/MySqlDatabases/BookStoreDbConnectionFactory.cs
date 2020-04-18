@@ -12,8 +12,15 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.MySqlDatabases
         private readonly string _connectionStringValue;
         public BookStoreDbConnectionFactory()
         {
-            _connectionStringValue = new AppConfiguration(DatabaseConnectionName.BookStore)._connectionString;
+            _connectionStringValue = new AppConfiguration(
+                                                          DatabaseConnectionName.BookStore
+                                                         )._connectionString;
+        
+        
+        
         }
+
+
 
         public string ConnectionString
         {

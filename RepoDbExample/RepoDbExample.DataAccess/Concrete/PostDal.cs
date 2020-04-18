@@ -14,7 +14,7 @@ using System.Text;
 
 namespace RepoDbExample.DataAccess.Concrete
 {
-    public class PostDal : DbRepositoryBase<Post, AoBlogDbConnectionFactory>,  IPostDal
+    public class PostDal : DbRepositoryBase<Post, AdemBlogDbConnectionFactory>,  IPostDal
     {
     }
 }

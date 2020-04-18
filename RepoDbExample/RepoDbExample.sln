@@ -3,15 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoDbExample.Core", "RepoDbExample.Core\RepoDbExample.Core.csproj", "{F2A69452-11C5-4479-866B-C84AC1BF2A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepoDbExample.Core", "RepoDbExample.Core\RepoDbExample.Core.csproj", "{F2A69452-11C5-4479-866B-C84AC1BF2A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoDbExample.Entites", "RepoDbExample.Entites\RepoDbExample.Entites.csproj", "{BAC97B50-606C-4F93-92B4-8282B8675640}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepoDbExample.Entites", "RepoDbExample.Entites\RepoDbExample.Entites.csproj", "{BAC97B50-606C-4F93-92B4-8282B8675640}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoDbExample.DataAccess", "RepoDbExample.DataAccess\RepoDbExample.DataAccess.csproj", "{AAC0E59F-6007-49C5-B440-439874D87B9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepoDbExample.DataAccess", "RepoDbExample.DataAccess\RepoDbExample.DataAccess.csproj", "{AAC0E59F-6007-49C5-B440-439874D87B9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoDbExample.Business", "RepoDbExample.Business\RepoDbExample.Business.csproj", "{C89EEEF5-F953-4A3B-8262-E0E6B41A3C96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepoDbExample.Business", "RepoDbExample.Business\RepoDbExample.Business.csproj", "{C89EEEF5-F953-4A3B-8262-E0E6B41A3C96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepoDbExample.MvcWebUI", "RepoDbExample.MvcWebUI\RepoDbExample.MvcWebUI.csproj", "{EAEFC0C6-1336-4BF9-9108-730428DDF34A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepoDbExample.MvcWebUI", "RepoDbExample.MvcWebUI\RepoDbExample.MvcWebUI.csproj", "{EAEFC0C6-1336-4BF9-9108-730428DDF34A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E9943B9E-419C-4A93-81F4-4510F22D68F2}"
+	ProjectSection(SolutionItems) = preProject
+		Notlar.txt = Notlar.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

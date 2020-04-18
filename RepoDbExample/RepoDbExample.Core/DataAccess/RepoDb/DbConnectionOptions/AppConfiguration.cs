@@ -18,7 +18,8 @@ namespace RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions
             configurationBuilder.AddJsonFile(path, false);
 
             var root = configurationBuilder.Build();
-            _connectionString = root.GetSection("ConnectionStrings").GetSection(databaseConnectionName.ToString()).Value;
+            _connectionString = root.GetSection("ConnectionStrings")
+                                    .GetSection(databaseConnectionName.ToString()).Value;
             _ = root.GetSection("ApplicationSettings");
         }
         public string ConnectionString

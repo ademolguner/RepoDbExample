@@ -128,7 +128,15 @@
               "target": "Package",
               "version": "[1.0.6, )"
             },
+            "RepoDb.SqLite": {
+              "target": "Package",
+              "version": "[1.0.6, )"
+            },
             "RepoDb.SqlServer": {
+              "target": "Package",
+              "version": "[1.0.6, )"
+            },
+            "RepoDb.SqlServer.BulkOperations": {
               "target": "Package",
               "version": "[1.0.6, )"
             },

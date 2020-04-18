@@ -9,7 +9,7 @@ using System.Text;
 namespace RepoDbExample.DataAccess.Concrete
 {
 
-    public class TagDal : DbRepositoryBase<Tag, AoBlogDbConnectionFactory>, ITagDal
+    public class TagDal : DbRepositoryBase<Tag, AdemBlogDbConnectionFactory>, ITagDal
     {
     }
 }

@@ -13,12 +13,11 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.PostgreSqLConnectionDat
         private readonly string _connectionStringValue;
         public FinansDbConnectionFactory()
         {
-            _connectionStringValue = new AppConfiguration(DatabaseConnectionName.FinansDb)._connectionString;
+            _connectionStringValue = new AppConfiguration(
+                                                           DatabaseConnectionName.FinansDb
+                                                         )._connectionString;
         }
-
-
-
-
+         
         public string ConnectionString
         {
             get { return _connectionStringValue; }

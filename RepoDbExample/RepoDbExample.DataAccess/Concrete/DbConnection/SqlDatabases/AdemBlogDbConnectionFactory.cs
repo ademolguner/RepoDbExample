@@ -6,12 +6,14 @@ using System.Data.SqlClient;
 
 namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
 {
-    public class AoBlogDbConnectionFactory : IDatabaseConnectionFactory
+    public class AdemBlogDbConnectionFactory : IDatabaseConnectionFactory
     {
         private readonly string _connectionStringValue;
-        public AoBlogDbConnectionFactory()
+        public AdemBlogDbConnectionFactory()
         {
-            _connectionStringValue = new AppConfiguration(DatabaseConnectionName.AdemBlogDb)._connectionString;
+            _connectionStringValue = new AppConfiguration(
+                                                           DatabaseConnectionName.AdemBlogDb
+                                                         )._connectionString;
         }
         public string ConnectionString
         {

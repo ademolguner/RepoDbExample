@@ -1,0 +1,430 @@
+﻿
+        #region sql stringtext veya stored procedure işlemleri
+        //public List<TEntity> GetListOrderByQuery(Expression<Func<TEntity, bool>> filter = null, IEnumerable<OrderField> queryOrderBy = null)
+        //{
+        //    using var conn = new DbConnection().CreateConnection().EnsureOpen();
+        //    var data = conn.Query<TEntity>(filter, orderBy: queryOrderBy).ToList();
+        //    return data;
+        //}
+
+
+
+
+
+        //public IEnumerable<TEntity> ExecuteQuery(string commandText, object param = null, CommandType? commandType = null)
+        //{
+        //    using var conn = new DbConnection().CreateConnection().EnsureOpen();
+        //    var data = conn.ExecuteQuery<TEntity>(commandText, param, commandType);
+        //    return data;
+        //}
+
+
+
+        //public IEnumerable<TEntity> ExecuteQuery(string commandText, object param = null, CommandType? commandType = null)
+        //{
+        //    using var dbCconnection = new DbConnection().CreateConnection().EnsureOpen();
+        //    var data = dbCconnection.ExecuteQuery<TEntity>(commandText, param, commandType);
+        //    return data;
+        //}
+
+        #endregion
+
+
+        #region  Kontrol Metotoları
+
+        //private bool GetClassAttrşbutesControl(object className, IEnumerable<OrderField> orderFields)
+        //{
+        //    Type myType = typeof(className.GetType());
+
+        //    var myPropInfo2 = myType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+        //    bool a = myPropInfo2.Any(c => orderFields.Select(x=> x.Name).ToList().Contains(c));
+        //    //orderFields.Where(x=> x.Name)
+
+
+        //    foreach (var item in orderFields)
+        //    {
+        //        myPropInfo2.Any(x=> x.Name.Contains(item.Name))
+        //    }
+
+        //    return true;
+        //}
+
+        #endregion
+
+
+
+
+
+        -- home controller
+        
+
+
+            #region yardımcı test kodları
+            //Type myType = typeof(Post);
+
+            //var myPropInfo2 = myType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            //foreach (var item in myPropInfo2)
+            //{
+
+            //}
+
+            // Get the PropertyInfo by passing the property name and specifying the BindingFlags.
+            //PropertyInfo myPropInfo = myType.GetProperty("Title", BindingFlags.Public | BindingFlags.Instance);
+            //var propName = typeof(Post).GetProperty(new Post().Title, BindingFlags.Public | BindingFlags.Instance).Name;
+
+            //new Post().Title
+            //   GetType(new Post).GetProperty(new Post().Title).GetValue(gCases(CaseIndex).GenInfo, Nothing)
+            #endregion
+
+
+
+
+
+            //string queryText = @" select 
+            //                              p.PostId,
+            //                              p.Title,
+            //                              c.CategoryId,
+            //                              c.CategoryName
+            //                         FROM [AdemBlogDb].[dbo].[Post]  as p
+            //                   inner join [AdemBlogDb].[dbo].[Category] as c on c.CategoryId=p.CategoryId";
+
+            //var midirRepoText = postInfoRepo.GetByExecuteTextQuery(queryText, null);
+            //var midirRepoProcedure = postInfoRepo.GetByExecuteStoredProcedureQuery("[dbo].[PostInfoList]", null);
+
+
+            //var postListem1 = _postService.TumPostlariGetir();
+
+            //var postListem2 = _postService.TumPostlariGetir_AktifOlanlari(true);
+
+            //var postListem3 = _postService.TumPostlariGetir_SiralıOlsun_CreatedDate_Des_Aktif_Asc(RepoDb.Enumerations.Order.Descending, RepoDb.Enumerations.Order.Ascending);
+
+            //var postListem4 = _postService.TumPostlariGetir_Where_CategoryIdGoreGetir_Sirala_CreatedDate(5, false, RepoDb.Enumerations.Order.Ascending);
+
+            ////var postListem5 = _postService.TumPostlariGetir_Adet(3);
+            ////var postListem5_1 = _postService.TumPostlariGetir_Adet(1, 3);
+
+            //var postListem6 = _postService.TumPostlariGetir_Where_Adet(true, 0, 3);
+            //var postListem6_1 = _postService.TumPostlariGetir_Where_Adet(true, 3);
+
+            //var postListem7 = _postService.TumPostlariGetir_Order_Adet(RepoDb.Enumerations.Order.Ascending, 0, 3);
+
+            //var postListem8 = _postService.TumPostlariGetir_Where_Order_Adet(5, true, RepoDb.Enumerations.Order.Ascending, RepoDb.Enumerations.Order.Descending, 0, 3);
+
+
+
+
+
+
+
+            //var data = _tagService.GetById(14);
+            //var tagData = _tagService.GetByTagName("RepoDb");
+
+            //_categoryService.NewItem(new Entites.Models.Sql.Northwind.Category { CategoryName = "Testere", Description = "denem" });
+            //_categoryService.TumunuGetir();
+
+
+            //_tagService.NewTagItem(new Tag { TagName = "RepoDB" });
+            //_tagService.TumunuGetir();
+
+            //_cashboxService.NewItem(new Cashbox { CashTypeId = 1, TotalQuantity = 45 });
+            //_cashboxService.QueryAll();
+
+public void Example()
+        {
+            string ConnectionString = "Data Source=.;  Initial Catalog=Northwind; Integrated Security=SSPI;";
+
+
+
+                   var sqlConnection = new SqlConnection(ConnectionString);
+                 var mysqlConnection = new MySqlConnection(ConnectionString);
+            var postgreSqlConnection = new NpgsqlConnection(ConnectionString);
+               var sqlLiteConnection = new SQLiteConnection(ConnectionString);
+
+            //var customer = new Customer
+            //{
+            //    CustomerID = 1881
+            //};
+
+            //using (var connection = new SqlConnection(ConnectionString))
+            //{
+            //    var queryExample = connection.Query<Customer>(x => x.CustomerID == 1881).FirstOrDefault();
+            //    var queryExample2 = connection.Query(12)
+            //    var customers = connection.ExecuteQuery<Customer>("SELECT * FROM [dbo].[Customer];");
+            //}
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                // Birden çok order parametresi gönderebiliriz.
+                var sort = new[] { new OrderField("CompanyName", RepoDb.Enumerations.Order.Descending),
+                                   new OrderField("City", RepoDb.Enumerations.Order.Ascending)
+                             };
+
+                var queryExample = connection.Query<Customer>(where: x => x.Country == "Türkiye",
+                                                              orderBy: sort);
+            }
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var sort = new[] { new OrderField("CompanyName", RepoDb.Enumerations.Order.Descending),
+                                   new OrderField("City", RepoDb.Enumerations.Order.Ascending)
+                             };
+
+                List<Customer> data = connection.Query<Customer>(where: x => x.Country == "Türkiye",
+                                                                   orderBy: sort,
+                                                                   top: 20
+                                                                 ).ToList();
+            }
+
+
+
+            //Querying multiple rows
+
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customers = connection.ExecuteQuery<Customer>("SELECT * FROM [dbo].[Customer];");
+            }
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customers = connection.QueryAll<Customer>();
+            }
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var sort = new[] { new OrderField("CompanyName", RepoDb.Enumerations.Order.Descending),
+                                   new OrderField("City", RepoDb.Enumerations.Order.Ascending)
+                             };
+                var data = connection.QueryAll<Customer>(orderBy: sort).ToList();
+            }
+
+
+
+            //Querying a single record
+
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customer = connection.ExecuteQuery<Customer>("SELECT * FROM [dbo].[Customer] WHERE (CustomerID = @CustomerID);",
+                                                                  new { CustomerID = 1903 }
+                                                                ).FirstOrDefault();
+            }
+
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customer = connection.Query<Customer>(e => e.CustomerId == 1903).FirstOrDefault();
+            }
+
+
+            //Inserting a record
+
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customer = new Customer
+                {
+                    CompanyName = "Sompo Sigorta",
+                    Address = "Kavacık"
+                };
+                var id = connection.ExecuteScalar<long>(@"INSERT INTO [dbo].[Customer] (CompanyName , Address)
+                                                                                VALUES (@CompanyName, @Address);
+                                                        SELECT CONVERT(BIGINT, SCOPE_IDENTITY());", customer);
+            }
+
+
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customer = new Customer
+                {
+                    CompanyName = "Sompo Sigorta",
+                    Address = "Kavacık"
+                };
+                var createdCustomerId = (long)connection.Insert<Customer>(customer);
+                // veya
+                var createdCustomerId2 = connection.Insert<Customer, long>(customer);
+            }
+
+            //Updating a record
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var affectedRows = connection.ExecuteScalar<int>(@"UPDATE [dbo].[Customer] 
+                                                                   SET CompanyName = @CompanyName, 
+                                                                           Address = @Address 
+                                                                  WHERE CustomerID = @CustomerID;"
+                                                                  , new
+                                                                  {
+                                                                      CustomerID = 1903,
+                                                                      CompanyName = "Sompo Sigorta",
+                                                                      Address = "Kavacık"
+                                                                  }
+                );
+            }
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customer = new Customer
+                {
+                    CustomerId = 1903,
+                    CompanyName = "Sompo Sigorta",
+                    Address = "Kavacık"
+                };
+                var affectedRows = connection.Update<Customer>(customer);
+            }
+
+            //Deleting a record
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var affectedRows = connection.ExecuteScalar<int>(@"DELETE FROM [dbo].[Customer]
+                                                                   WHERE CustomerID = @CustomerID;"
+                                                                   , new { CustomerID = 1903 }
+                                                                );
+            }
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var affectedRows = connection.Delete<Customer>(1903);
+            }
+
+
+            // Coklu data cağırma
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var sql = @"SELECT * FROM [dbo].[Customer] WHERE CustomerId = @CustomerId;
+                            SELECT * FROM [dbo].[Order]    WHERE CustomerId = @CustomerId;";
+
+                var extractor = connection.ExecuteQueryMultiple(sql, new { CustomerId = 1903 });
+                var customer = extractor.Extract<Customer>().FirstOrDefault();
+                var orders = extractor.Extract<Order>().AsList();
+                customer.Orders = orders;
+            }
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customerId = 1903;
+                var tuple = connection.QueryMultiple<Customer, Order>(customer => customer.CustomerId == customerId,
+                                                                         order => order.CustomerId == customerId);
+                var customer = tuple.Item1.FirstOrDefault();
+                var orders = tuple.Item2.AsList();
+                customer.Orders = orders;
+            }
+
+
+            // Coklu nested sorgu
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var extractor = connection.ExecuteQueryMultiple(@"SELECT * FROM [dbo].[Customer];
+                                                                  SELECT * FROM [dbo].[Order];"
+                                                                );
+                var customers = extractor.Extract<Customer>().AsList();
+                var orders = extractor.Extract<Order>().AsList();
+
+                customers.ForEach(customer =>
+                                   customer.Orders = orders.Where(o => o.CustomerId == customer.CustomerId).AsList());
+            }
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customerId = 1903;
+                var tuple = connection.QueryMultiple<Customer, Order>(customer => customer.CustomerId == customerId,
+                                                                         order => order.CustomerId == customerId);
+                var customers = tuple.Item1.ToList();
+                var orders = tuple.Item2.AsList();
+                customers.ForEach(customer =>
+                                    customer.Orders = orders.Where(o => o.CustomerId == customer.CustomerId).AsList());
+            }
+
+
+            //Inserting multiple rows
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customers = GetCustomers();
+                var affectedRows = connection.InsertAll<Customer>(customers);
+            }
+
+
+            //Updating multiple rows
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customers = GetCustomers("Istanbul");
+                var affectedRows = connection.UpdateAll<Customer>(customers);
+            }
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var customers = GetCustomers();
+                var rows = connection.BulkDelete<Customer>(customers);
+            }
+
+
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var products = connection.QueryAll<Customer>(cacheKey: "AllCustomers");
+            }
+
+
+
+            // Değişkenlerimizi tanımlayalım
+            var lastId = 1515;
+            var batchSize = 1000000;
+            var page = 1;
+            string sourceConnectionString = "";
+            string destinationConnectionString = "";
+
+            // Kaynak bağlantısı oluşturalım (Oracle)
+            using (var sourceConnection = new MySqlConnection(sourceConnectionString))
+            {
+                using (var reader = sourceConnection.ExecuteReader(@"SELECT 
+                                                                           Id, FirstName, LastName, LastUpdatedUtc, DateInsertedUtc 
+                                                                     FROM [dbo].[User] 
+                                                                     WHERE UserId > @Id OFFSET @Offset FETCH NEXT @BatchSize ROWS ONLY;", 
+                                                                     new {
+                                                                           UserId = lastId, 
+                                                                           Offset = (batchSize * page), 
+                                                                           BatchSize = batchSize 
+                                                                         }
+                                                                   ))
+                {
+                    // Hedef bağlantımızı oluşturalım
+                    using (var destinationConnection = new SqlConnection(destinationConnectionString))
+                    {
+                        var insertedRows = destinationConnection.BulkInsert<User>(reader.GetSchemaTable());
+                    }
+                }
+            }
+
+
+        }
+
+
+        private List<Customer> GetCustomers()
+        {
+            string cnnString = "connectionstring degerimiz";
+            using (var sqlConnection = new SqlConnection(cnnString))
+            {
+                return sqlConnection.ExecuteQuery<Customer>("SELECT * FROM [dbo].[Customer]").ToList();
+            }
+        }
+
+        private List<Customer> GetCustomers(string cityName)
+        {
+            string cnnString = "connectionstring degerimiz"; 
+            using (var sqlConnection = new SqlConnection(cnnString))
+            {
+                var customerLists= sqlConnection.ExecuteQuery<Customer>(@"SELECT * FROM [dbo].[Customer]
+                                                                           WHERE (CityName = @CityName);",
+                                                                           new { CityName = cityName }
+                                                                       ).ToList();
+
+                customerLists.ForEach(customer => customer.UpdatedDate = DateTime.Now);
+                return customerLists;
+            }
+        }

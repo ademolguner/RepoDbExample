@@ -23,15 +23,8 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
                 var data = conn.ExecuteQuery<TEntity>(commandText, param, CommandType.Text);
                 return data;
             }
-            catch (SqlException odbcEx)
-            {
-                throw new Exception(GetSqlExceptionDetail(odbcEx));
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
+            catch (SqlException odbcEx) { throw new Exception(GetSqlExceptionDetail(odbcEx));}
+            catch (Exception ex)        { throw new Exception(ex.Message);}
         }
         
         public IEnumerable<TEntity> GetByExecuteStoredProcedureQuery(string commandText, object param = null)
@@ -42,28 +35,16 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
                 var data = conn.ExecuteQuery<TEntity>(commandText, param, CommandType.StoredProcedure);
                 return data;
             }
-            catch (SqlException odbcEx)
-            {
-                throw new Exception(GetSqlExceptionDetail(odbcEx));
-            }
-            catch (Exception ex )
-            {
-
-                throw new Exception(ex.Message);
-            }
+            catch (SqlException odbcEx) { throw new Exception(GetSqlExceptionDetail(odbcEx)); }
+            catch (Exception ex )       { throw new Exception(ex.Message); }
         }
 
 
-
         #region yardımcı metotlar
-        
         private string GetSqlExceptionDetail(SqlException ex)
         {
-
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
             var data = conn.ExecuteQuery<TEntity>("", "", CommandType.TableDirect);
-           
-
             StringBuilder errorMessages = new StringBuilder();
             for (int i = 0; i < ex.Errors.Count; i++)
             {
@@ -76,7 +57,6 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             }
             return errorMessages.ToString();
         }
-
         #endregion
     }
 }

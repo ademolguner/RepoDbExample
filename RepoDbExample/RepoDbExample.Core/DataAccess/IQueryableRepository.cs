@@ -8,6 +8,5 @@ namespace RepoDbExample.Core.DataAccess
     {
         IEnumerable<T> GetByExecuteTextQuery(string commandText, object param = null);
         IEnumerable<T> GetByExecuteStoredProcedureQuery(string commandText, object param = null);
-          
     }
 }

@@ -472,6 +472,19 @@
           "lib/netstandard2.0/RepoDb.PostgreSql.dll": {}
         }
       },
+      "RepoDb.SqLite/1.0.6": {
+        "type": "package",
+        "dependencies": {
+          "RepoDb": "1.10.6",
+          "System.Data.SQLite": "1.0.112"
+        },
+        "compile": {
+          "lib/netstandard2.0/RepoDb.SqLite.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RepoDb.SqLite.dll": {}
+        }
+      },
       "RepoDb.SqlServer/1.0.6": {
         "type": "package",
         "dependencies": {
@@ -484,6 +497,19 @@
         },
         "runtime": {
           "lib/netstandard2.0/RepoDb.SqlServer.dll": {}
+        }
+      },
+      "RepoDb.SqlServer.BulkOperations/1.0.6": {
+        "type": "package",
+        "dependencies": {
+          "RepoDb": "1.10.11",
+          "RepoDb.SqlServer": "1.0.6"
+        },
+        "compile": {
+          "lib/netstandard2.0/RepoDb.SqlServer.BulkOperations.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RepoDb.SqlServer.BulkOperations.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -951,6 +977,39 @@
           "runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "System.Data.SQLite/1.0.112": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SQLite.Core": "1.0.112"
+        }
+      },
+      "System.Data.SQLite.Core/1.0.112": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Data.SQLite.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Data.SQLite.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/netstandard2.0/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/netstandard2.0/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/netstandard2.0/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/netstandard2.0/SQLite.Interop.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
           }
         }
       },
@@ -2289,7 +2348,9 @@
           "RepoDb": "1.10.11",
           "RepoDb.MySql": "1.0.6",
           "RepoDb.PostgreSql": "1.0.6",
+          "RepoDb.SqLite": "1.0.6",
           "RepoDb.SqlServer": "1.0.6",
+          "RepoDb.SqlServer.BulkOperations": "1.0.6",
           "System.Data.SqlClient": "4.8.1"
         },
         "compile": {
@@ -3009,6 +3070,21 @@
         "repodb.postgresql.nuspec"
       ]
     },
+    "RepoDb.SqLite/1.0.6": {
+      "sha512": "NmOdRhiFM/qy1UQUh3RlF7ZLm5etOB0mcsqryI3ek1IMveyIro83/C4cLQ1UafyQVQTeQl9kOS3kwkVqODUqnQ==",
+      "type": "package",
+      "path": "repodb.sqlite/1.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "RepoDb-64x64.png",
+        "lib/netstandard2.0/RepoDb.SqLite.dll",
+        "lib/netstandard2.0/RepoDb.SqLite.xml",
+        "repodb.sqlite.1.0.6.nupkg.sha512",
+        "repodb.sqlite.nuspec"
+      ]
+    },
     "RepoDb.SqlServer/1.0.6": {
       "sha512": "jVsnNf3BXALpwk1LCxsKM29Ecto0JX7bDt/AJqOfDZjzF/Es7J4xZO+LXULkYSEPdlUCFHoaHtTpybO7aExWHw==",
       "type": "package",
@@ -3022,6 +3098,20 @@
         "lib/netstandard2.0/RepoDb.SqlServer.xml",
         "repodb.sqlserver.1.0.6.nupkg.sha512",
         "repodb.sqlserver.nuspec"
+      ]
+    },
+    "RepoDb.SqlServer.BulkOperations/1.0.6": {
+      "sha512": "Yz1I7m8jig5bMPRZYZ0FuqYt88W20qdZGgxgG21OytlPzf7nA+47YG4bN3c/IHGda/HHvuGWRba+169TtmJysA==",
+      "type": "package",
+      "path": "repodb.sqlserver.bulkoperations/1.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "RepoDb-64x64.png",
+        "lib/netstandard2.0/RepoDb.SqlServer.BulkOperations.dll",
+        "repodb.sqlserver.bulkoperations.1.0.6.nupkg.sha512",
+        "repodb.sqlserver.bulkoperations.nuspec"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -3979,6 +4069,65 @@
         "system.data.sqlclient.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "System.Data.SQLite/1.0.112": {
+      "sha512": "QsYUir0pcx+1DfhhbpCsIJN8nWmHTT4Z/s85q6Un5AbVEPCP6RA0EA9cgzwQ1l5wZ8SQ0jUq747FxPmwJs7ycQ==",
+      "type": "package",
+      "path": "system.data.sqlite/1.0.112",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "system.data.sqlite.1.0.112.nupkg.sha512",
+        "system.data.sqlite.nuspec"
+      ]
+    },
+    "System.Data.SQLite.Core/1.0.112": {
+      "sha512": "3wA9v/K2ncZWsWfEBTiQppsi2014IJMXsZ1md3pk5bEXAJyuTthSrHF4bIWm5MG+C5g5XLhA2H7XfnSq1PXCeQ==",
+      "type": "package",
+      "path": "system.data.sqlite.core/1.0.112",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net20/System.Data.SQLite.Core.targets",
+        "build/net20/x64/SQLite.Interop.dll",
+        "build/net20/x86/SQLite.Interop.dll",
+        "build/net40/System.Data.SQLite.Core.targets",
+        "build/net40/x64/SQLite.Interop.dll",
+        "build/net40/x86/SQLite.Interop.dll",
+        "build/net45/System.Data.SQLite.Core.targets",
+        "build/net45/x64/SQLite.Interop.dll",
+        "build/net45/x86/SQLite.Interop.dll",
+        "build/net451/System.Data.SQLite.Core.targets",
+        "build/net451/x64/SQLite.Interop.dll",
+        "build/net451/x86/SQLite.Interop.dll",
+        "build/net46/System.Data.SQLite.Core.targets",
+        "build/net46/x64/SQLite.Interop.dll",
+        "build/net46/x86/SQLite.Interop.dll",
+        "lib/net20/System.Data.SQLite.dll",
+        "lib/net20/System.Data.SQLite.dll.config",
+        "lib/net20/System.Data.SQLite.xml",
+        "lib/net40/System.Data.SQLite.dll",
+        "lib/net40/System.Data.SQLite.dll.config",
+        "lib/net40/System.Data.SQLite.xml",
+        "lib/net45/System.Data.SQLite.dll",
+        "lib/net45/System.Data.SQLite.dll.config",
+        "lib/net45/System.Data.SQLite.xml",
+        "lib/net451/System.Data.SQLite.dll",
+        "lib/net451/System.Data.SQLite.dll.config",
+        "lib/net451/System.Data.SQLite.xml",
+        "lib/net46/System.Data.SQLite.dll",
+        "lib/net46/System.Data.SQLite.dll.config",
+        "lib/net46/System.Data.SQLite.xml",
+        "lib/netstandard2.0/System.Data.SQLite.dll",
+        "lib/netstandard2.0/System.Data.SQLite.dll.config",
+        "lib/netstandard2.0/System.Data.SQLite.xml",
+        "runtimes/linux-x64/native/netstandard2.0/SQLite.Interop.dll",
+        "runtimes/osx-x64/native/netstandard2.0/SQLite.Interop.dll",
+        "runtimes/win-x64/native/netstandard2.0/SQLite.Interop.dll",
+        "runtimes/win-x86/native/netstandard2.0/SQLite.Interop.dll",
+        "system.data.sqlite.core.1.0.112.nupkg.sha512",
+        "system.data.sqlite.core.nuspec"
       ]
     },
     "System.Diagnostics.Debug/4.3.0": {

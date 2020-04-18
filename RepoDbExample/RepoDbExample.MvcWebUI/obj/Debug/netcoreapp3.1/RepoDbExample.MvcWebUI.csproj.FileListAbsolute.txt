@@ -161,3 +161,10 @@ D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWeb
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\obj\Debug\netcoreapp3.1\RepoDbExample.MvcWebUI.MvcApplicationPartsAssemblyInfo.cache
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\obj\Debug\netcoreapp3.1\Razor\Views\Home\_BookPartial.cshtml.g.cs
 D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\obj\Debug\netcoreapp3.1\Razor\Views\Home\_FinansPartial.cshtml.g.cs
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\bin\Debug\netcoreapp3.1\RepoDb.SqLite.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\bin\Debug\netcoreapp3.1\System.Data.SQLite.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\netstandard2.0\SQLite.Interop.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\netstandard2.0\SQLite.Interop.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\netstandard2.0\SQLite.Interop.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\netstandard2.0\SQLite.Interop.dll
+D:\PROJELERIM\SOURCECONTROL\GIT\RepoDbExample\RepoDbExample\RepoDbExample.MvcWebUI\bin\Debug\netcoreapp3.1\RepoDb.SqlServer.BulkOperations.dll
