@@ -32,9 +32,14 @@ namespace RepoDbExample.MvcWebUI
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            SqlServerBootstrap.Initialize();
+            PostgreSqlBootstrap.Initialize();
+            MySqlBootstrap.Initialize();
+
+            #region dependency injection
 
             services.AddTransient<IDatabaseConnectionFactory, NorthWindDbConnectionFactory>();
             services.AddTransient<IDatabaseConnectionFactory, AdemBlogDbConnectionFactory>();
@@ -56,12 +61,8 @@ namespace RepoDbExample.MvcWebUI
 
             services.AddTransient<IBookService, BookManager>();
             services.AddTransient<IBookDal, BookDal>();
-
-            SqlServerBootstrap.Initialize();
-            PostgreSqlBootstrap.Initialize();
-            MySqlBootstrap.Initialize();
-            
-
+            #endregion
+             
             services.AddControllersWithViews();
         }
 
@@ -84,7 +85,7 @@ namespace RepoDbExample.MvcWebUI
             app.UseRouting();
 
             app.UseAuthorization();
-             
+
 
             app.UseEndpoints(endpoints =>
             {
@@ -93,6 +94,6 @@ namespace RepoDbExample.MvcWebUI
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
-       
+
     }
 }

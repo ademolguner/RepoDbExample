@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vppzUy2TdCKXQV13dy+aRTBYvSh9ompmLZnCaiOhmVUv9e9j1NsU1G5oVWp/RA6GDMRkx4dWCTv3Vzh/c3E7oA==",
+  "dgSpecHash": "ydkKJxY13XTQ8X012SZrd2FP0ymbtlIyZuBL4q51+bP1XxC+QtUr+eYsur7BSkXwbvN3H1QRXv0mjuS2QRpztg==",
   "success": true,
   "projectFilePath": "D:\\PROJELERIM\\SOURCECONTROL\\GIT\\RepoDbExample\\RepoDbExample\\RepoDbExample.MvcWebUI\\RepoDbExample.MvcWebUI.csproj",
   "expectedPackageFiles": [
@@ -52,7 +52,7 @@
     "C:\\Users\\ademo\\.nuget\\packages\\mysql.data\\8.0.19\\mysql.data.8.0.19.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\11.0.2\\newtonsoft.json.11.0.2.nupkg.sha512",
-    "C:\\Users\\ademo\\.nuget\\packages\\npgsql\\4.1.3.1\\npgsql.4.1.3.1.nupkg.sha512",
+    "C:\\Users\\ademo\\.nuget\\packages\\npgsql\\4.1.2\\npgsql.4.1.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\nuget.frameworks\\4.7.0\\nuget.frameworks.4.7.0.nupkg.sha512",
     "C:\\Users\\ademo\\.nuget\\packages\\popper.js\\1.16.0\\popper.js.1.16.0.nupkg.sha512",
     "C:\\Users\\ademo\\.nuget\\packages\\repodb\\1.10.11\\repodb.1.10.11.nupkg.sha512",

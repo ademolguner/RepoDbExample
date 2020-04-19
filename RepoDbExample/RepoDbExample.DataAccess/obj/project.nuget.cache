@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9TKfZ+Fi7qpYXFt/rH4We1WzR47YKK9TEOIfMJzJLDzL5VvYG8jwd7wmtAkuslmnI736NtaMRKXGUTIokisROQ==",
+  "dgSpecHash": "M5CKK8HeSqgDcPvmdxLH4Ja9HjM3X7zvsI3hj+jGDdwUpqkVq8r5tGIFLmrezQInJOda2OWp3YBAjwhiU7nrzw==",
   "success": true,
   "projectFilePath": "D:\\PROJELERIM\\SOURCECONTROL\\GIT\\RepoDbExample\\RepoDbExample\\RepoDbExample.DataAccess\\RepoDbExample.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -30,7 +30,7 @@
     "C:\\Users\\ademo\\.nuget\\packages\\mysql.data\\8.0.19\\mysql.data.8.0.19.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
-    "C:\\Users\\ademo\\.nuget\\packages\\npgsql\\4.1.3.1\\npgsql.4.1.3.1.nupkg.sha512",
+    "C:\\Users\\ademo\\.nuget\\packages\\npgsql\\4.1.2\\npgsql.4.1.2.nupkg.sha512",
     "C:\\Users\\ademo\\.nuget\\packages\\repodb\\1.10.11\\repodb.1.10.11.nupkg.sha512",
     "C:\\Users\\ademo\\.nuget\\packages\\repodb.mysql\\1.0.6\\repodb.mysql.1.0.6.nupkg.sha512",
     "C:\\Users\\ademo\\.nuget\\packages\\repodb.postgresql\\1.0.6\\repodb.postgresql.1.0.6.nupkg.sha512",

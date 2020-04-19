@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@model List<RepoDbExample.Entites.Models.Sql.AdemBlogDb.ComplexTypes.PostInfoDto>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+       Makale Listem
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Sıra</th>
+                        <th>Baslık</th>
+                        <th>Kategory</th>
+                        <th>Tarih</th>
+                        <th>Etiketler</th>
+                        @*<th>Kısa Icerik</th>*@
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    @{ int rowNumber = 0;
+                        foreach (var item in Model)
+                        {
+                            rowNumber += 1;
+                        <tr>
+                            <td>@rowNumber</td>
+                            <td>@item.Title</td>
+                            <td>@item.CategoryName</td>
+                            <td>@item.CreatedDate.ToString("dd-MM-yyyy hh:mm")</td>
+                            <td>@item.TagNames</td>
+                            @*<td>@item.SmallContent</td>*@
+                        </tr>
+                            }
+                     }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @*<div class="card-footer small text-muted">@DateTime.Now.ToString("dd-MM-yyyy hh:mm")</div>*@
+</div>

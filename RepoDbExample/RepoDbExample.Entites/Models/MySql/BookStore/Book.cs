@@ -13,5 +13,6 @@ namespace RepoDbExample.Entites.Models.MySql.BookStore
         public DateTime EditionYear { get; set; }
         public int Issue { get; set; }
         public string CoverImage { get; set; }
+        public string About { get; set; }
     }
 }

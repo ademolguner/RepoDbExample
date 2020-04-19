@@ -4,66 +4,35 @@
 
 @model List<RepoDbExample.Entites.Models.PostgreSql.Finans.ComplexTypes.FinanceSummaryDto>
 
-@foreach (var item in Model)
-{
 
-    @if (item.CashTypeName == "Gelir")
-    {
-    <div class="col-xl-3 col-sm-6 mb-3">
-        <div class="card text-white bg-success o-hidden h-100">
-            <div class="card-body">
-                <div class="card-body-icon">
-                    <i class="fas fa-fw fa-shopping-cart"></i>
-                </div>
-                <div class="mr-5">@item.TotalQuantity</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">@item.CashTypeName</span>
-                <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                </span>
-            </a>
-        </div>
+
+<div class="card mb-12">
+    <div class="card-header">
+        <i class="fas fa-table"></i>
+        Cari Bilgilerim
     </div>
-    }
-    else
-    {
-<div class="col-xl-3 col-sm-6 mb-3">
-    <div class="card text-white bg-danger o-hidden h-100">
-        <div class="card-body">
-            <div class="card-body-icon">
-                <i class="fas fa-fw fa-life-ring"></i>
+    <div class="card-body">
+        @foreach (var item in Model)
+        {
+            string headetDivClass = item.CashTypeName == "Gelir"
+                                   ? " bg-success "
+                                   : " bg-danger ";
+
+            <div class="card text-white @headetDivClass mb-3">
+                <div class="card-header">@item.CashTypeName</div>
+                <div class="card-body">
+                    <h5 class="card-title">@item.TotalQuantity TL</h5>
+                    <p class="card-text">İşlem hareketleri @item.CashTypeName bilgileri toplamı</p>
+                </div>
+                <a class="card-footer text-white clearfix small z-1" href="#">
+                    <span class="float-left">Detay</span>
+                    <span class="float-right">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                </a>
             </div>
-            <div class="mr-5">@item.TotalQuantity</div>
-        </div>
-        <a class="card-footer text-white clearfix small z-1" href="#">
-            <span class="float-left">@item.CashTypeName</span>
-            <span class="float-right">
-                <i class="fas fa-angle-right"></i>
-            </span>
-        </a>
+
+
+        }
     </div>
 </div>
-    }
-
-
-}
-
-
-
-@*<div class="col-xl-3 col-sm-6 mb-3">
-        <div class="card text-white bg-danger o-hidden h-100">
-            <div class="card-body">
-                <div class="card-body-icon">
-                    <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
-            </div>
-            <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                    <i class="fas fa-angle-right"></i>
-                </span>
-            </a>
-        </div>
-    </div>*@

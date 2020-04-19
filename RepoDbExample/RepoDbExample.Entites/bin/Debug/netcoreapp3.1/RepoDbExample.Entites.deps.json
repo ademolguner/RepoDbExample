@@ -371,14 +371,14 @@
           }
         }
       },
-      "Npgsql/4.1.3.1": {
+      "Npgsql/4.1.2": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         },
         "runtime": {
           "lib/netcoreapp3.0/Npgsql.dll": {
-            "assemblyVersion": "4.1.3.1",
-            "fileVersion": "4.1.3.1"
+            "assemblyVersion": "4.1.2.0",
+            "fileVersion": "4.1.2.0"
           }
         }
       },
@@ -412,7 +412,7 @@
       },
       "RepoDb.PostgreSql/1.0.6": {
         "dependencies": {
-          "Npgsql": "4.1.3.1",
+          "Npgsql": "4.1.2",
           "RepoDb": "1.10.11"
         },
         "runtime": {
@@ -1587,7 +1587,6 @@
           "Microsoft.Extensions.Configuration": "3.1.3",
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.3",
           "Microsoft.Extensions.Configuration.Json": "3.1.3",
-          "Npgsql": "4.1.3.1",
           "RepoDb": "1.10.11",
           "RepoDb.MySql": "1.0.6",
           "RepoDb.PostgreSql": "1.0.6",
@@ -1790,12 +1789,12 @@
       "path": "newtonsoft.json/10.0.1",
       "hashPath": "newtonsoft.json.10.0.1.nupkg.sha512"
     },
-    "Npgsql/4.1.3.1": {
+    "Npgsql/4.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-354pl/Picmt5/AIrm8urFwtxfK4n4NbmfBnLA9yvP8VtILSQF3/sFo3+lGuz+q4iyD18QeNFy0NMNBzsocFVlw==",
-      "path": "npgsql/4.1.3.1",
-      "hashPath": "npgsql.4.1.3.1.nupkg.sha512"
+      "sha512": "sha512-41Nht/GnC/cRCA/2T9vq5NAv8m24RDp3paRhJCMc8ipOURH6zDZAQFe8mcLq1hAgMkK1Wy8VoRYL/8Op+L6OCg==",
+      "path": "npgsql/4.1.2",
+      "hashPath": "npgsql.4.1.2.nupkg.sha512"
     },
     "RepoDb/1.10.11": {
       "type": "package",

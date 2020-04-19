@@ -417,7 +417,7 @@
           "lib/netstandard1.3/Newtonsoft.Json.dll": {}
         }
       },
-      "Npgsql/4.1.3.1": {
+      "Npgsql/4.1.2": {
         "type": "package",
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "4.6.0"
@@ -2344,7 +2344,6 @@
           "Microsoft.Extensions.Configuration": "3.1.3",
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.3",
           "Microsoft.Extensions.Configuration.Json": "3.1.3",
-          "Npgsql": "4.1.3.1",
           "RepoDb": "1.10.11",
           "RepoDb.MySql": "1.0.6",
           "RepoDb.PostgreSql": "1.0.6",
@@ -3001,10 +3000,10 @@
         "tools/install.ps1"
       ]
     },
-    "Npgsql/4.1.3.1": {
-      "sha512": "354pl/Picmt5/AIrm8urFwtxfK4n4NbmfBnLA9yvP8VtILSQF3/sFo3+lGuz+q4iyD18QeNFy0NMNBzsocFVlw==",
+    "Npgsql/4.1.2": {
+      "sha512": "41Nht/GnC/cRCA/2T9vq5NAv8m24RDp3paRhJCMc8ipOURH6zDZAQFe8mcLq1hAgMkK1Wy8VoRYL/8Op+L6OCg==",
       "type": "package",
-      "path": "npgsql/4.1.3.1",
+      "path": "npgsql/4.1.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3020,7 +3019,7 @@
         "lib/netstandard2.1/Npgsql.dll",
         "lib/netstandard2.1/Npgsql.pdb",
         "lib/netstandard2.1/Npgsql.xml",
-        "npgsql.4.1.3.1.nupkg.sha512",
+        "npgsql.4.1.2.nupkg.sha512",
         "npgsql.nuspec",
         "postgresql.png"
       ]

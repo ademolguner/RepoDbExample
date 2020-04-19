@@ -42,7 +42,7 @@ namespace RepoDbExample.MvcWebUI.Controllers
         private readonly ICashboxService _cashboxService;
         private readonly ITagService _tagService;
         private readonly IPostService _postService;
-        public QueryableRepositoryBase<PostInfo, AdemBlogDbConnectionFactory> postInfoRepo = new QueryableRepositoryBase<PostInfo, AdemBlogDbConnectionFactory>();
+        public QueryableRepositoryBase<PostInfoDto, AdemBlogDbConnectionFactory> postInfoRepo = new QueryableRepositoryBase<PostInfoDto, AdemBlogDbConnectionFactory>();
         public QueryableRepositoryBase<FinanceSummaryDto, FinansDbConnectionFactory> cashboxInfo = new QueryableRepositoryBase<FinanceSummaryDto, FinansDbConnectionFactory>();
 
         public readonly IBookService _bookService;
@@ -57,15 +57,23 @@ namespace RepoDbExample.MvcWebUI.Controllers
         }
 
         public IActionResult Index()
-        { 
+        {
+           ViewBag.MenuList = _categoryService.TumunuGetir().ToList();
             HomeIndexViewModel homeIndexViewModel = new HomeIndexViewModel
             {
                 BookList = GetBooks().ToList(),
-                Cashboxes = GetFinancialCash()
+                Cashboxes = GetFinancialCash(),
+                Posts = GetPostListInfo()
             };
             return View(homeIndexViewModel);
-        } 
-           
+        }
+
+        private List<PostInfoDto> GetPostListInfo()
+        {
+            string postListProcNameText = @"[dbo].[PostListInfo]";
+            var postListResult = postInfoRepo.GetByExecuteStoredProcedureQuery(postListProcNameText, null);
+            return postListResult.ToList();
+        }
 
         public ICollection<Book> GetBooks()
         {
@@ -94,6 +102,13 @@ namespace RepoDbExample.MvcWebUI.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+       
+        public IActionResult MenuPartial()
+        {
+            var data = _categoryService.TumunuGetir();
+            return PartialView("_KategoriListPartial", data.ToList());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
