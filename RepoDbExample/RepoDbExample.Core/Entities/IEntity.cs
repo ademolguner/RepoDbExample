@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace RepoDbExample.Core.Entities
+﻿namespace RepoDbExample.Core.Entities
 {
-   public interface IEntity
+    public interface IEntity
     {
     }
 }

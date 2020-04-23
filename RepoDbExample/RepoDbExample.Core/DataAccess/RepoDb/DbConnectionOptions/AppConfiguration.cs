@@ -1,9 +1,5 @@
-﻿
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.Extensions.Configuration;
 using System.IO;
-using System.Text;
 
 namespace RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions
 {
@@ -22,11 +18,10 @@ namespace RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions
                                     .GetSection(databaseConnectionName.ToString()).Value;
             _ = root.GetSection("ApplicationSettings");
         }
+
         public string ConnectionString
         {
             get => _connectionString;
         }
     }
 }
-
-

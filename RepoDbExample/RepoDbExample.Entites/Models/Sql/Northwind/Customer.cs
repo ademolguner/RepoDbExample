@@ -1,8 +1,6 @@
 ﻿using RepoDbExample.Core.Entities;
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Text;
 
 namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
@@ -12,7 +10,6 @@ namespace RepoDbExample.Entites.Models.Sql.Northwind
         {
             Orders = new HashSet<Order>();
         }
-
 
         public int CustomerId { get; set; }
         public string CompanyName { get; set; }

@@ -1,7 +1,6 @@
 ﻿using RepoDbExample.Core.Entities;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace RepoDbExample.Entites.Models.Sql.Northwind
 {

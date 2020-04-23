@@ -6,6 +6,5 @@ namespace RepoDbExample.Entites.Models.Sql.AdemBlogDb
     {
         public int TagId { get; set; }
         public string TagName { get; set; }
-
     }
 }

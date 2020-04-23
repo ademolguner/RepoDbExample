@@ -1,4 +1,4 @@
-﻿using RepoDbExample.Core.Entities; 
+﻿using RepoDbExample.Core.Entities;
 using System;
 
 namespace RepoDbExample.Entites.Models.PostgreSql.Finans

@@ -1,8 +1,5 @@
 ﻿using RepoDbExample.Core.Entities;
-using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
@@ -28,5 +25,4 @@ namespace RepoDbExample.Entites.Models.Sql.Northwind
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual Supplier Supplier { get; set; }
     }
-
 }

@@ -1,5 +1,3 @@
-using System;
-
 namespace RepoDbExample.MvcWebUI.Models
 {
     public class ErrorViewModel

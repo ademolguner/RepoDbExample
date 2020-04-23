@@ -1,6 +1,4 @@
-﻿ 
-using RepoDbExample.Core.Entities;
-using System.Collections.Generic;
+﻿using RepoDbExample.Core.Entities;
 
 namespace RepoDbExample.Entites.Models.Sql.AdemBlogDb
 {

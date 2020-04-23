@@ -1,7 +1,6 @@
 ﻿using RepoDbExample.Core.Entities;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace RepoDbExample.Entites.Models.Sql.Northwind
 {
@@ -26,8 +25,6 @@ namespace RepoDbExample.Entites.Models.Sql.Northwind
         public string ShipRegion { get; set; }
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
-
-
 
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }

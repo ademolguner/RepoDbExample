@@ -5,8 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 
 namespace RepoDbExample.Core.DataAccess.RepoDb
@@ -23,10 +21,10 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
                 var data = conn.ExecuteQuery<TEntity>(commandText, param, CommandType.Text);
                 return data;
             }
-            catch (SqlException odbcEx) { throw new Exception(GetSqlExceptionDetail(odbcEx));}
-            catch (Exception ex)        { throw new Exception(ex.Message);}
+            catch (SqlException odbcEx) { throw new Exception(GetSqlExceptionDetail(odbcEx)); }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
-        
+
         public IEnumerable<TEntity> GetByExecuteStoredProcedureQuery(string commandText, object param = null)
         {
             try
@@ -36,11 +34,11 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
                 return data;
             }
             catch (SqlException odbcEx) { throw new Exception(GetSqlExceptionDetail(odbcEx)); }
-            catch (Exception ex )       { throw new Exception(ex.Message); }
+            catch (Exception ex) { throw new Exception(ex.Message); }
         }
 
-
         #region yardımcı metotlar
+
         private string GetSqlExceptionDetail(SqlException ex)
         {
             using var conn = new DbConnection().CreateConnection().EnsureOpen();
@@ -57,8 +55,7 @@ namespace RepoDbExample.Core.DataAccess.RepoDb
             }
             return errorMessages.ToString();
         }
-        #endregion
+
+        #endregion yardımcı metotlar
     }
 }
-
-

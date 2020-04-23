@@ -1,6 +1,4 @@
 ﻿using RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -8,14 +6,15 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
 {
     public class NorthWindDbConnectionFactory : IDatabaseConnectionFactory
     {
-
         private readonly string _connectionStringValue;
+
         public NorthWindDbConnectionFactory()
         {
             _connectionStringValue = new AppConfiguration(
                                                            DatabaseConnectionName.NorthWind
                                                          )._connectionString;
         }
+
         public string ConnectionString
         {
             get { return _connectionStringValue; }
@@ -27,5 +26,9 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.SqlConnectionDatabases
             return new SqlConnection(_connectionStringValue);
         }
 
+        public void Dispose()
+        {
+            Dispose();
+        }
     }
 }

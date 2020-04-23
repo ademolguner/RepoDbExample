@@ -1,11 +1,7 @@
 ﻿using RepoDbExample.Entites.Models.MySql.BookStore;
-using RepoDbExample.Entites.Models.PostgreSql.Finans;
 using RepoDbExample.Entites.Models.PostgreSql.Finans.ComplexTypes;
 using RepoDbExample.Entites.Models.Sql.AdemBlogDb.ComplexTypes;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RepoDbExample.MvcWebUI.ViewModels
 {

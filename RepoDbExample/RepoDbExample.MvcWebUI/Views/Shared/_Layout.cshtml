@@ -47,8 +47,6 @@
     </body>
     </html>*@
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +68,6 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -133,7 +130,6 @@
                 </div>
             </li>
         </ul>
-
     </nav>
 
     <div id="wrapper">
@@ -145,7 +141,7 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
-            </li> 
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="/Home/MenuPartial/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Kategoriler
@@ -153,7 +149,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     @{
                             await Html.RenderPartialAsync("_KategoriListPartial");
-                        } 
+                        }
                 </div>
             </li>
         </ul>
@@ -171,7 +167,6 @@
                 </ol>
 
                 @RenderBody()
-
             </div>
             <!-- /.container-fluid -->
             <!-- Sticky Footer -->
@@ -182,10 +177,8 @@
                     </div>
                 </div>
             </footer>
-
         </div>
         <!-- /.content-wrapper -->
-
     </div>
     <!-- /#wrapper -->
     <!-- Scroll to Top Button-->
@@ -230,7 +223,5 @@
     <!-- Demo scripts for this page-->
     <script src="~/js/demo/datatables-demo.js"></script>
     @*<script src="~/js/demo/chart-area-demo.js"></script>*@
-
 </body>
-
 </html>

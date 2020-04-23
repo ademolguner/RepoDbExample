@@ -1,23 +1,20 @@
 ﻿using Npgsql;
 using RepoDbExample.Core.DataAccess.RepoDb.DbConnectionOptions;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
-using System.Text;
 
 namespace RepoDbExample.DataAccess.Concrete.DbConnection.PostgreSqLConnectionDatabases
 {
     public class FinansDbConnectionFactory : IDatabaseConnectionFactory
     {
         private readonly string _connectionStringValue;
+
         public FinansDbConnectionFactory()
         {
             _connectionStringValue = new AppConfiguration(
                                                            DatabaseConnectionName.FinansDb
                                                          )._connectionString;
         }
-         
+
         public string ConnectionString
         {
             get { return _connectionStringValue; }
@@ -27,6 +24,11 @@ namespace RepoDbExample.DataAccess.Concrete.DbConnection.PostgreSqLConnectionDat
         public IDbConnection CreateConnection()
         {
             return new NpgsqlConnection(_connectionStringValue);
+        }
+
+        public void Dispose()
+        {
+            Dispose();
         }
     }
 }

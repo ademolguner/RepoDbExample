@@ -9,6 +9,7 @@ namespace RepoDbExample.Entites.Models.PostgreSql.Finans
         {
             LastUpdatedDate = DateTime.Now;
         }
+
         public int FinancialCashId { get; set; }
         public int CurrencyId { get; set; }
         public decimal CashCurrncy { get; set; }
