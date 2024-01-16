@@ -19,7 +19,7 @@
     <PackageReference Include="RepoDb.SqLite" Version="1.0.6" />
     <PackageReference Include="RepoDb.SqlServer" Version="1.0.6" />
     <PackageReference Include="RepoDb.SqlServer.BulkOperations" Version="1.0.6" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
 </Project>
